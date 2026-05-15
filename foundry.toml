@@ -1,0 +1,42 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+auto_detect_remappings = false
+solc = "0.8.35"
+evm_version = "london"  # Broad cross-chain support: avoids newer opcodes while keeping explorer-verifiable metadata.
+optimizer = true
+optimizer_runs = 1_000_000_000  # Runtime gas wins are measurable; ChainConfig is deployed once per chain and remains far below size limits.
+via_ir = true
+extra_output = ["ir", "irOptimized"]
+extra_output_files = ["ir", "irOptimized"]
+sizes = true
+gas_reports = ['*']
+ignored_error_codes = [
+    "license",
+    "code-size",
+    "init-code-size",
+    "transient-storage"
+]
+ignored_warnings_from = ["lib/openzeppelin-contracts/"]  # OZ v5.1.0 warns about `error` becoming a future Solidity keyword.
+remappings = [
+    "openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "forge-std/=lib/forge-std/src/",
+    "test/=test/",
+]
+
+[invariant]
+runs = 256
+depth = 64
+
+[lint]
+exclude_lints = [
+    "mixed-case-variable",
+    "mixed-case-function",
+    "screaming-snake-case-const",
+    "screaming-snake-case-immutable",
+    "unaliased-plain-import",
+    "unsafe-typecast"
+]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
