@@ -267,6 +267,33 @@ The test suite includes unit, fuzz, invariant, and reference-hash cross-checks a
 
 ---
 
+## Deployment
+
+**Contract address:**
+
+```
+0x5Afec0de00EB1c5323C7faA110f67499F744467b
+```
+
+🟢 **LIVE** on:
+- [Arbitrum](https://arbiscan.io/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Avalanche](https://snowscan.xyz/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Base](https://basescan.org/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [BNB Chain](https://bscscan.com/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Ethereum](https://etherscan.io/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Gnosis](https://gnosisscan.io/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Ink](https://explorer.inkonchain.com/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Linea](https://lineascan.build/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Monad](https://monadvision.com/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Optimism](https://optimistic.etherscan.io/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Polygon](https://polygonscan.com/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Scroll](https://scrollscan.com/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+- [Unichain](https://uniscan.xyz/address/0x5Afec0de00EB1c5323C7faA110f67499F744467b)
+
+Same address on every chain — deterministic CREATE2 deployment. Immutable. Compiled for London EVM target for broader chain compatibility.
+
+---
+
 ## Build & Verify
 
 ChainConfig is designed for byte-identical reproducible builds. The canonical bytecode is determined by:
@@ -280,7 +307,7 @@ To reproduce, clone the repo and run `forge build`. The resulting init code hash
 0x645aea6490075d66530b3f76be94e7970ab0ebfa0328300879e73cf8d79bedbe
 ```
 
-See `deploy/INSTRUCTIONS.md` for the canonical CREATE2 deployment at address `0x5Afec0de00EB1c5323C7faA110f67499F744467b`.
+See `deploy/INSTRUCTIONS.md` for the trustless CREATE2 deploy procedure.
 
 ---
 
