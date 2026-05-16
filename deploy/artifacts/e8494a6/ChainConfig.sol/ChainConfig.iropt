@@ -1,0 +1,1925 @@
+/// @use-src 20:"lib/openzeppelin-contracts/contracts/interfaces/IERC5267.sol", 22:"lib/openzeppelin-contracts/contracts/utils/ShortStrings.sol", 23:"lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol", 26:"lib/openzeppelin-contracts/contracts/utils/cryptography/EIP712.sol", 31:"src/ChainConfig.sol", 32:"src/Core.sol", 33:"src/Definitions.sol"
+object "ChainConfig_45944" {
+    code {
+        {
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            mstore(64, memoryguard(0x0160))
+            if callvalue() { revert(0, 0) }
+            let memPtr := /** @src -1:-1:-1 */ 0
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            let size := /** @src -1:-1:-1 */ 0
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            size := /** @src -1:-1:-1 */ 0
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            let memPtr_1 := mload(64)
+            finalize_allocation(memPtr_1, 64)
+            memPtr := memPtr_1
+            mstore(memPtr_1, 11)
+            let _1 := add(memPtr_1, 32)
+            mstore(_1, "ChainConfig")
+            /// @src 33:170:183  "\"ChainConfig\""
+            let memPtr_2 := /** @src -1:-1:-1 */ 0
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            let size_1 := /** @src -1:-1:-1 */ 0
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            size_1 := /** @src -1:-1:-1 */ 0
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            let memPtr_3 := mload(64)
+            finalize_allocation(memPtr_3, 64)
+            memPtr_2 := memPtr_3
+            mstore(memPtr_3, /** @src 33:170:183  "\"ChainConfig\"" */ 1)
+            let _2 := add(memPtr_3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 32)
+            /// @src 33:170:183  "\"ChainConfig\""
+            mstore(_2, "1")
+            /// @src 26:3393:3446  "_name = name.toShortStringWithFallback(_nameFallback)"
+            mstore(288, /** @src 26:3401:3446  "name.toShortStringWithFallback(_nameFallback)" */ fun_toShortStringWithFallback(memPtr_1))
+            /// @src 26:3456:3518  "_version = version.toShortStringWithFallback(_versionFallback)"
+            mstore(320, /** @src 26:3467:3518  "version.toShortStringWithFallback(_versionFallback)" */ fun_toShortStringWithFallback_2156(memPtr_3))
+            /// @src 26:3542:3564  "keccak256(bytes(name))"
+            let _3 := keccak256(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1, mload(/** @src 26:3542:3564  "keccak256(bytes(name))" */ memPtr_1))
+            /// @src 26:3528:3564  "_hashedName = keccak256(bytes(name))"
+            mstore(224, /** @src 26:3542:3564  "keccak256(bytes(name))" */ _3)
+            /// @src 26:3591:3616  "keccak256(bytes(version))"
+            let _4 := keccak256(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _2, mload(/** @src 26:3591:3616  "keccak256(bytes(version))" */ memPtr_3))
+            /// @src 26:3574:3616  "_hashedVersion = keccak256(bytes(version))"
+            mstore(256, /** @src 26:3591:3616  "keccak256(bytes(version))" */ _4)
+            /// @src 26:3627:3657  "_cachedChainId = block.chainid"
+            mstore(160, /** @src 26:3644:3657  "block.chainid" */ chainid())
+            /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+            let expr_mpos := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+            /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+            let _5 := add(expr_mpos, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 32)
+            /// @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")"
+            mstore(_5, 0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f)
+            mstore(add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 64), /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ _3)
+            mstore(add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 96), _4)
+            mstore(add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 128), /** @src 26:3644:3657  "block.chainid" */ chainid())
+            /// @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")"
+            mstore(add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 26:3627:3657  "_cachedChainId = block.chainid" */ 160), /** @src 26:4278:4282  "this" */ address())
+            /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+            mstore(expr_mpos, /** @src 26:3627:3657  "_cachedChainId = block.chainid" */ 160)
+            /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+            finalize_allocation(expr_mpos, 192)
+            /// @src 26:3667:3715  "_cachedDomainSeparator = _buildDomainSeparator()"
+            mstore(/** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 128, /** @src 26:4194:4285  "keccak256(abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this)))" */ keccak256(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _5, mload(/** @src 26:4194:4285  "keccak256(abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this)))" */ expr_mpos)))
+            /// @src 26:3725:3752  "_cachedThis = address(this)"
+            mstore(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ 192, /** @src 26:4278:4282  "this" */ address())
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            let _6 := mload(64)
+            let _7 := datasize("ChainConfig_45944_deployed")
+            codecopy(_6, dataoffset("ChainConfig_45944_deployed"), _7)
+            setimmutable(_6, "41907", mload(/** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 128))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            setimmutable(_6, "41909", mload(/** @src 26:3627:3657  "_cachedChainId = block.chainid" */ 160))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            setimmutable(_6, "41911", mload(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ 192))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            setimmutable(_6, "41913", mload(/** @src 26:3528:3564  "_hashedName = keccak256(bytes(name))" */ 224))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            setimmutable(_6, "41915", mload(/** @src 26:3574:3616  "_hashedVersion = keccak256(bytes(version))" */ 256))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            setimmutable(_6, "41918", mload(/** @src 26:3393:3446  "_name = name.toShortStringWithFallback(_nameFallback)" */ 288))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            setimmutable(_6, "41921", mload(/** @src 26:3456:3518  "_version = version.toShortStringWithFallback(_versionFallback)" */ 320))
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            return(_6, _7)
+        }
+        function finalize_allocation(memPtr, size)
+        {
+            let newFreePtr := add(memPtr, and(add(size, 31), not(31)))
+            if or(gt(newFreePtr, sub(shl(64, 1), 1)), lt(newFreePtr, memPtr))
+            {
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ shl(224, 0x4e487b71))
+                mstore(4, 0x41)
+                revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x24)
+            }
+            mstore(64, newFreePtr)
+        }
+        /// @ast-id 41035 @src 22:2887:3227  "function toShortStringWithFallback(string memory value, string storage store) internal returns (ShortString) {..."
+        function fun_toShortStringWithFallback(var_value_mpos) -> var_
+        {
+            /// @src 22:2983:2994  "ShortString"
+            var_ := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+            /// @src 22:3010:3029  "bytes(value).length"
+            let expr := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 22:3010:3022  "bytes(value)" */ var_value_mpos)
+            /// @src 22:3006:3221  "if (bytes(value).length < 32) {..."
+            switch /** @src 22:3010:3034  "bytes(value).length < 32" */ lt(expr, /** @src 22:3032:3034  "32" */ 0x20)
+            case /** @src 22:3006:3221  "if (bytes(value).length < 32) {..." */ 0 {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if gt(expr, sub(shl(64, 1), 1))
+                {
+                    mstore(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ shl(224, 0x4e487b71))
+                    mstore(4, 0x41)
+                    revert(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x24)
+                }
+                let _1 := sload(/** @src 26:3432:3445  "_nameFallback" */ 0x00)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let length := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                length := shr(1, _1)
+                let outOfPlaceEncoding := and(_1, 1)
+                if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }
+                if eq(outOfPlaceEncoding, lt(length, /** @src 22:3032:3034  "32" */ 0x20))
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                {
+                    mstore(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ shl(224, 0x4e487b71))
+                    mstore(4, 0x22)
+                    revert(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x24)
+                }
+                if gt(length, 31)
+                {
+                    if gt(length, expr)
+                    {
+                        mstore(/** @src 26:3432:3445  "_nameFallback" */ 0x00, 0x00)
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        let data := keccak256(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 22:3032:3034  "32" */ 0x20)
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        let newSlotCount := shr(5, add(expr, 31))
+                        let deleteStart := add(data, newSlotCount)
+                        let _2 := sub(shr(5, add(length, 31)), newSlotCount)
+                        let i := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        for { } lt(i, _2) { i := add(i, 1) }
+                        {
+                            sstore(add(deleteStart, i), /** @src 26:3432:3445  "_nameFallback" */ 0x00)
+                        }
+                    }
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let srcOffset := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                srcOffset := /** @src 22:3032:3034  "32" */ 0x20
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                switch gt(expr, 31)
+                case 1 {
+                    let loopEnd := and(expr, not(31))
+                    mstore(/** @src 26:3432:3445  "_nameFallback" */ 0x00, 0x00)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dstPtr := keccak256(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 22:3032:3034  "32" */ srcOffset)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let i_1 := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    for { }
+                    lt(i_1, loopEnd)
+                    {
+                        i_1 := add(i_1, /** @src 22:3032:3034  "32" */ 0x20)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    {
+                        sstore(dstPtr, mload(add(var_value_mpos, srcOffset)))
+                        dstPtr := add(dstPtr, 1)
+                        srcOffset := add(srcOffset, /** @src 22:3032:3034  "32" */ 0x20)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    if lt(loopEnd, expr)
+                    {
+                        let lastValue := mload(add(var_value_mpos, srcOffset))
+                        sstore(dstPtr, and(lastValue, not(shr(and(shl(3, expr), 248), not(0)))))
+                    }
+                    sstore(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(shl(1, expr), 1))
+                }
+                default {
+                    let value := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    if expr
+                    {
+                        value := mload(add(var_value_mpos, srcOffset))
+                    }
+                    sstore(/** @src 26:3432:3445  "_nameFallback" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ or(and(value, not(shr(shl(3, expr), not(0)))), shl(1, expr)))
+                }
+                /// @src 22:3168:3210  "return ShortString.wrap(FALLBACK_SENTINEL)"
+                var_ := /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0xff
+                /// @src 22:3168:3210  "return ShortString.wrap(FALLBACK_SENTINEL)"
+                leave
+            }
+            default /// @src 22:3006:3221  "if (bytes(value).length < 32) {..."
+            {
+                /// @src 22:1836:1908  "if (bstr.length > 31) {..."
+                if /** @src 22:1840:1856  "bstr.length > 31" */ gt(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 22:1840:1851  "bstr.length" */ var_value_mpos), /** @src 22:1854:1856  "31" */ 0x1f)
+                /// @src 22:1836:1908  "if (bstr.length > 31) {..."
+                {
+                    /// @src 22:1879:1897  "StringTooLong(str)"
+                    let _3 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 22:1879:1897  "StringTooLong(str)"
+                    mstore(_3, shl(224, 0x305a27a9))
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 22:1879:1897  "StringTooLong(str)" */ add(_3, 4), /** @src 22:3032:3034  "32" */ 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let length_1 := mload(var_value_mpos)
+                    mstore(add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), length_1)
+                    let i_2 := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    for { }
+                    lt(i_2, length_1)
+                    {
+                        i_2 := add(i_2, /** @src 22:3032:3034  "32" */ 0x20)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    {
+                        mstore(add(add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ i_2), 68), mload(add(add(var_value_mpos, i_2), /** @src 22:3032:3034  "32" */ 0x20)))
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(add(add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ length_1), 68), /** @src 26:3432:3445  "_nameFallback" */ 0x00)
+                    /// @src 22:1879:1897  "StringTooLong(str)"
+                    revert(_3, add(sub(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ and(add(length_1, /** @src 22:1854:1856  "31" */ 0x1f), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ not(31))), /** @src 22:1879:1897  "StringTooLong(str)" */ _3), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68))
+                }
+                /// @src 22:1957:1970  "bytes32(bstr)"
+                let value_1 := /** @src 26:3432:3445  "_nameFallback" */ 0x00
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let length_2 := mload(var_value_mpos)
+                value_1 := /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ mload(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(var_value_mpos, /** @src 22:3032:3034  "32" */ 0x20))
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if lt(length_2, /** @src 22:3032:3034  "32" */ 0x20)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                {
+                    value_1 := and(value_1, shl(shl(3, sub(/** @src 22:3032:3034  "32" */ 0x20, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ length_2)), not(0)))
+                }
+                /// @src 22:3050:3077  "return toShortString(value)"
+                var_ := /** @src 22:1949:1985  "uint256(bytes32(bstr)) | bstr.length" */ or(value_1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ length_2)
+                /// @src 22:3050:3077  "return toShortString(value)"
+                leave
+            }
+        }
+        /// @ast-id 41035 @src 22:2887:3227  "function toShortStringWithFallback(string memory value, string storage store) internal returns (ShortString) {..."
+        function fun_toShortStringWithFallback_2156(var_value_mpos) -> var
+        {
+            /// @src 22:2983:2994  "ShortString"
+            var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+            /// @src 22:3010:3029  "bytes(value).length"
+            let expr := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 22:3010:3022  "bytes(value)" */ var_value_mpos)
+            /// @src 22:3006:3221  "if (bytes(value).length < 32) {..."
+            switch /** @src 22:3010:3034  "bytes(value).length < 32" */ lt(expr, /** @src 22:3032:3034  "32" */ 0x20)
+            case /** @src 22:3006:3221  "if (bytes(value).length < 32) {..." */ 0 {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if gt(expr, sub(shl(64, 1), 1))
+                {
+                    mstore(0, shl(224, 0x4e487b71))
+                    mstore(4, 0x41)
+                    revert(0, 0x24)
+                }
+                let _1 := sload(/** @src 33:170:183  "\"ChainConfig\"" */ 1)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let length := 0
+                length := shr(/** @src 33:170:183  "\"ChainConfig\"" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                let outOfPlaceEncoding := and(_1, /** @src 33:170:183  "\"ChainConfig\"" */ 1)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }
+                if eq(outOfPlaceEncoding, lt(length, /** @src 22:3032:3034  "32" */ 0x20))
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                {
+                    mstore(0, shl(224, 0x4e487b71))
+                    mstore(4, 0x22)
+                    revert(0, 0x24)
+                }
+                if gt(length, 31)
+                {
+                    if gt(length, expr)
+                    {
+                        mstore(0, /** @src 33:170:183  "\"ChainConfig\"" */ 1)
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        let data := keccak256(0, /** @src 22:3032:3034  "32" */ 0x20)
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        let newSlotCount := shr(5, add(expr, 31))
+                        let deleteStart := add(data, newSlotCount)
+                        let _2 := sub(shr(5, add(length, 31)), newSlotCount)
+                        let i := 0
+                        for { }
+                        lt(i, _2)
+                        {
+                            i := add(i, /** @src 33:170:183  "\"ChainConfig\"" */ 1)
+                        }
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        {
+                            sstore(add(deleteStart, i), 0)
+                        }
+                    }
+                }
+                let srcOffset := 0
+                srcOffset := /** @src 22:3032:3034  "32" */ 0x20
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                switch gt(expr, 31)
+                case 1 {
+                    let loopEnd := and(expr, not(31))
+                    mstore(0, /** @src 33:170:183  "\"ChainConfig\"" */ 1)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dstPtr := keccak256(0, /** @src 22:3032:3034  "32" */ srcOffset)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let i_1 := 0
+                    for { }
+                    lt(i_1, loopEnd)
+                    {
+                        i_1 := add(i_1, /** @src 22:3032:3034  "32" */ 0x20)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    {
+                        sstore(dstPtr, mload(add(var_value_mpos, srcOffset)))
+                        dstPtr := add(dstPtr, /** @src 33:170:183  "\"ChainConfig\"" */ 1)
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        srcOffset := add(srcOffset, /** @src 22:3032:3034  "32" */ 0x20)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    if lt(loopEnd, expr)
+                    {
+                        let lastValue := mload(add(var_value_mpos, srcOffset))
+                        sstore(dstPtr, and(lastValue, not(shr(and(shl(3, expr), 248), not(0)))))
+                    }
+                    sstore(/** @src 33:170:183  "\"ChainConfig\"" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(shl(/** @src 33:170:183  "\"ChainConfig\"" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr), /** @src 33:170:183  "\"ChainConfig\"" */ 1))
+                }
+                default /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                {
+                    let value := 0
+                    if expr
+                    {
+                        value := mload(add(var_value_mpos, srcOffset))
+                    }
+                    sstore(/** @src 33:170:183  "\"ChainConfig\"" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ or(and(value, not(shr(shl(3, expr), not(0)))), shl(/** @src 33:170:183  "\"ChainConfig\"" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr)))
+                }
+                /// @src 22:3168:3210  "return ShortString.wrap(FALLBACK_SENTINEL)"
+                var := /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0xff
+                /// @src 22:3168:3210  "return ShortString.wrap(FALLBACK_SENTINEL)"
+                leave
+            }
+            default /// @src 22:3006:3221  "if (bytes(value).length < 32) {..."
+            {
+                /// @src 22:1836:1908  "if (bstr.length > 31) {..."
+                if /** @src 22:1840:1856  "bstr.length > 31" */ gt(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 22:1840:1851  "bstr.length" */ var_value_mpos), /** @src 22:1854:1856  "31" */ 0x1f)
+                /// @src 22:1836:1908  "if (bstr.length > 31) {..."
+                {
+                    /// @src 22:1879:1897  "StringTooLong(str)"
+                    let _3 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 22:1879:1897  "StringTooLong(str)"
+                    mstore(_3, shl(224, 0x305a27a9))
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 22:1879:1897  "StringTooLong(str)" */ add(_3, 4), /** @src 22:3032:3034  "32" */ 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let length_1 := mload(var_value_mpos)
+                    mstore(add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), length_1)
+                    let i_2 := 0
+                    for { }
+                    lt(i_2, length_1)
+                    {
+                        i_2 := add(i_2, /** @src 22:3032:3034  "32" */ 0x20)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    {
+                        mstore(add(add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ i_2), 68), mload(add(add(var_value_mpos, i_2), /** @src 22:3032:3034  "32" */ 0x20)))
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(add(add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ length_1), 68), 0)
+                    /// @src 22:1879:1897  "StringTooLong(str)"
+                    revert(_3, add(sub(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 22:1879:1897  "StringTooLong(str)" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ and(add(length_1, /** @src 22:1854:1856  "31" */ 0x1f), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ not(31))), /** @src 22:1879:1897  "StringTooLong(str)" */ _3), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68))
+                }
+                /// @src 22:1957:1970  "bytes32(bstr)"
+                let value_1 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                let length_2 := mload(var_value_mpos)
+                value_1 := /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ mload(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(var_value_mpos, /** @src 22:3032:3034  "32" */ 0x20))
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if lt(length_2, /** @src 22:3032:3034  "32" */ 0x20)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                {
+                    value_1 := and(value_1, shl(shl(3, sub(/** @src 22:3032:3034  "32" */ 0x20, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ length_2)), not(0)))
+                }
+                /// @src 22:3050:3077  "return toShortString(value)"
+                var := /** @src 22:1949:1985  "uint256(bytes32(bstr)) | bstr.length" */ or(value_1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ length_2)
+                /// @src 22:3050:3077  "return toShortString(value)"
+                leave
+            }
+        }
+    }
+    /// @use-src 22:"lib/openzeppelin-contracts/contracts/utils/ShortStrings.sol", 25:"lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol", 26:"lib/openzeppelin-contracts/contracts/utils/cryptography/EIP712.sol", 27:"lib/openzeppelin-contracts/contracts/utils/cryptography/MessageHashUtils.sol", 31:"src/ChainConfig.sol", 32:"src/Core.sol", 34:"src/HashLib.sol", 35:"src/utils/SignatureValidator.sol"
+    object "ChainConfig_45944_deployed" {
+        code {
+            {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                mstore(64, memoryguard(0x80))
+                if iszero(lt(calldatasize(), 4))
+                {
+                    switch shr(224, calldataload(0))
+                    case 0x0349a4a8 {
+                        if callvalue() { revert(0, 0) }
+                        if slt(add(calldatasize(), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 64) { revert(0, 0) }
+                        let value0 := abi_decode_address()
+                        let ret := fun_read_bytes32(value0, calldataload(36))
+                        let memPos := mload(64)
+                        mstore(memPos, ret)
+                        return(memPos, 32)
+                    }
+                    case 0x06631b68 {
+                        if callvalue() { revert(0, 0) }
+                        let param, param_1, param_2 := abi_decode_addresst_string_calldata(calldatasize())
+                        let ret_1 := /** @src 31:11927:11985  "read_uint({ signer: signer, key: _key_to_bytes32( key ) })" */ fun_read_uint(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ param, /** @src 31:11960:11982  "_key_to_bytes32( key )" */ fun_key_to_bytes32(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ param_1, param_2))
+                        let memPos_1 := mload(64)
+                        mstore(memPos_1, ret_1)
+                        return(memPos_1, 32)
+                    }
+                    case 0x35ca51e6 {
+                        if callvalue() { revert(0, 0) }
+                        let _1 := abi_decode_struct_Config_calldata(calldatasize())
+                        /// @src 31:5002:5012  "msg.sender"
+                        fun_write_config_internal(_1, caller())
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        return(0, 0)
+                    }
+                    case 0x3644e515 {
+                        if callvalue() { revert(0, 0) }
+                        if slt(add(calldatasize(), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 0) { revert(0, 0) }
+                        let ret_2 := /** @src 31:13339:13360  "_domainSeparatorV4( )" */ fun_domainSeparatorV4()
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        let memPos_2 := mload(64)
+                        mstore(memPos_2, ret_2)
+                        return(memPos_2, 32)
+                    }
+                    case 0x46a3c3bb {
+                        if callvalue() { revert(0, 0) }
+                        if slt(add(calldatasize(), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 128) { revert(0, 0) }
+                        let offset := calldataload(4)
+                        if gt(offset, 0xffffffffffffffff) { revert(0, 0) }
+                        let _2 := add(4, offset)
+                        if slt(add(sub(calldatasize(), offset), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 160) { revert(0, 0) }
+                        let value := 0
+                        value := calldataload(36)
+                        let _3 := and(value, 0xffffffffffffffffffffffffffffffffffffffff)
+                        if iszero(eq(value, _3)) { revert(0, 0) }
+                        let offset_1 := calldataload(68)
+                        if gt(offset_1, 0xffffffffffffffff) { revert(0, 0) }
+                        let value2, value3 := abi_decode_string_calldata(add(4, offset_1), calldatasize())
+                        let value_1 := calldataload(100)
+                        if iszero(eq(value_1, iszero(iszero(value_1)))) { revert(0, 0) }
+                        /// @src 31:6726:6748  "_hash_config( config )"
+                        let expr := /** @src 32:5603:5634  "_hashTypedDataV4( struct_hash )" */ fun_hashTypedDataV4(/** @src 32:5544:5585  "HashLib.calc_config_struct_hash( config )" */ fun_calc_config_struct_hash(/** @src 31:6726:6748  "_hash_config( config )" */ _2))
+                        /// @src 31:6875:6993  "if(  is_valid_signature == false  )  revert InvalidSignature({ signer: signer, digest: digest, signature: signature })"
+                        if /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ iszero(/** @src 31:6787:6865  "SignatureValidator.is_valid_signature( signer, digest, signature, is_eip1271 )" */ fun_is_valid_signature(value, expr, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ abi_decode_available_length_bytes(/** @src 31:6787:6865  "SignatureValidator.is_valid_signature( signer, digest, signature, is_eip1271 )" */ value2, value3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ calldatasize()), /** @src 31:6787:6865  "SignatureValidator.is_valid_signature( signer, digest, signature, is_eip1271 )" */ value_1))
+                        /// @src 31:6875:6993  "if(  is_valid_signature == false  )  revert InvalidSignature({ signer: signer, digest: digest, signature: signature })"
+                        {
+                            /// @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })"
+                            let _4 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                            /// @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })"
+                            mstore(_4, 0xd491963d00000000000000000000000000000000000000000000000000000000)
+                            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                            mstore(/** @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })" */ add(_4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4), _3)
+                            mstore(add(/** @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })" */ _4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), expr)
+                            mstore(add(/** @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })" */ _4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68), 96)
+                            /// @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })"
+                            revert(_4, sub(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ abi_encode_bytes_calldata(value2, value3, add(/** @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })" */ _4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 100)), /** @src 31:6919:6993  "InvalidSignature({ signer: signer, digest: digest, signature: signature })" */ _4))
+                        }
+                        /// @src 31:7036:7042  "signer"
+                        fun_write_config_internal(_2, value)
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        return(0, 0)
+                    }
+                    case 0x5ec5d860 {
+                        if callvalue() { revert(0, 0) }
+                        /// @src 31:14052:14081  "return _hash_config( config )"
+                        let var_digest := /** @src 32:5603:5634  "_hashTypedDataV4( struct_hash )" */ fun_hashTypedDataV4(/** @src 32:5544:5585  "HashLib.calc_config_struct_hash( config )" */ fun_calc_config_struct_hash(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ abi_decode_struct_Config_calldata(calldatasize())))
+                        let memPos_3 := mload(64)
+                        mstore(memPos_3, var_digest)
+                        return(memPos_3, 32)
+                    }
+                    case 0x84b0196e {
+                        if callvalue() { revert(0, 0) }
+                        if slt(add(calldatasize(), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 0) { revert(0, 0) }
+                        /// @src 26:6092:6140  "return _name.toStringWithFallback(_nameFallback)"
+                        let var_mpos := /** @src 26:6099:6140  "_name.toStringWithFallback(_nameFallback)" */ fun_toStringWithFallback(/** @src 26:6099:6104  "_name" */ loadimmutable("41918"))
+                        /// @src 26:6547:6601  "return _version.toStringWithFallback(_versionFallback)"
+                        let var_mpos_1 := /** @src 26:6554:6601  "_version.toStringWithFallback(_versionFallback)" */ fun_toStringWithFallback_7398(/** @src 26:6554:6562  "_version" */ loadimmutable("41921"))
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        let size := 0
+                        let length := size
+                        length := size
+                        size := 0x20
+                        let memPtr := mload(64)
+                        finalize_allocation(memPtr, size)
+                        mstore(memPtr, 0)
+                        let size_1 := 0
+                        let length_1 := 0
+                        length_1 := 0
+                        size_1 := size
+                        calldatacopy(0, calldatasize(), 0)
+                        let memPos_4 := mload(64)
+                        mstore(memPos_4, 0x0f00000000000000000000000000000000000000000000000000000000000000)
+                        mstore(add(memPos_4, size), 224)
+                        let tail := abi_encode_string(var_mpos, add(memPos_4, 224))
+                        mstore(add(memPos_4, 64), sub(tail, memPos_4))
+                        let tail_1 := abi_encode_string(var_mpos_1, tail)
+                        mstore(add(memPos_4, 96), /** @src 26:5590:5603  "block.chainid" */ chainid())
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        mstore(add(memPos_4, 128), /** @src 26:5625:5629  "this" */ address())
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        mstore(add(memPos_4, 160), 0)
+                        mstore(add(memPos_4, 192), sub(tail_1, memPos_4))
+                        let pos := tail_1
+                        let length_2 := mload(memPtr)
+                        mstore(tail_1, length_2)
+                        pos := add(tail_1, size)
+                        let srcPtr := add(memPtr, size)
+                        let i := 0
+                        for { }
+                        lt(i, length_2)
+                        {
+                            i := add(i, /** @src 26:6584:6600  "_versionFallback" */ 0x01)
+                        }
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        {
+                            mstore(pos, mload(srcPtr))
+                            pos := add(pos, size)
+                            srcPtr := add(srcPtr, size)
+                        }
+                        return(memPos_4, sub(pos, memPos_4))
+                    }
+                    case 0x905a787d {
+                        if callvalue() { revert(0, 0) }
+                        let param_3, param_4, param_5 := abi_decode_addresst_string_calldata(calldatasize())
+                        let ret_3 := /** @src 31:10196:10257  "read_bytes32({ signer: signer, key: _key_to_bytes32( key ) })" */ fun_read_bytes32(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ param_3, /** @src 31:10232:10254  "_key_to_bytes32( key )" */ fun_key_to_bytes32(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ param_4, param_5))
+                        let memPos_5 := mload(64)
+                        mstore(memPos_5, ret_3)
+                        return(memPos_5, 32)
+                    }
+                    case 0xc0ae5c86 {
+                        if callvalue() { revert(0, 0) }
+                        if slt(add(calldatasize(), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 64) { revert(0, 0) }
+                        let value0_1 := abi_decode_address()
+                        let ret_4 := fun_read_address(value0_1, calldataload(36))
+                        let memPos_6 := mload(64)
+                        mstore(memPos_6, and(ret_4, 0xffffffffffffffffffffffffffffffffffffffff))
+                        return(memPos_6, 32)
+                    }
+                    case 0xdb6be1e4 {
+                        if callvalue() { revert(0, 0) }
+                        let param_6, param_7, param_8 := abi_decode_addresst_string_calldata(calldatasize())
+                        let ret_5 := /** @src 31:8428:8489  "read_address({ signer: signer, key: _key_to_bytes32( key ) })" */ fun_read_address(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ param_6, /** @src 31:8464:8486  "_key_to_bytes32( key )" */ fun_key_to_bytes32(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ param_7, param_8))
+                        let memPos_7 := mload(64)
+                        mstore(memPos_7, and(ret_5, 0xffffffffffffffffffffffffffffffffffffffff))
+                        return(memPos_7, 32)
+                    }
+                    case 0xdd6d1250 {
+                        if callvalue() { revert(0, 0) }
+                        if slt(add(calldatasize(), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 64) { revert(0, 0) }
+                        let value0_2 := abi_decode_address()
+                        let ret_6 := fun_read_uint(value0_2, calldataload(36))
+                        let memPos_8 := mload(64)
+                        mstore(memPos_8, ret_6)
+                        return(memPos_8, 32)
+                    }
+                }
+                if iszero(calldatasize())
+                {
+                    /// @src 31:14580:14620  "revert( \"Direct transfers not allowed\" )"
+                    let _5 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 31:14580:14620  "revert( \"Direct transfers not allowed\" )"
+                    mstore(_5, 0x08c379a000000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 31:14580:14620  "revert( \"Direct transfers not allowed\" )" */ add(_5, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4), 32)
+                    mstore(add(/** @src 31:14580:14620  "revert( \"Direct transfers not allowed\" )" */ _5, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), 28)
+                    mstore(add(/** @src 31:14580:14620  "revert( \"Direct transfers not allowed\" )" */ _5, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68), "Direct transfers not allowed")
+                    /// @src 31:14580:14620  "revert( \"Direct transfers not allowed\" )"
+                    revert(_5, 100)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                revert(0, 0)
+            }
+            function abi_decode_address() -> value
+            {
+                value := calldataload(4)
+                if iszero(eq(value, and(value, 0xffffffffffffffffffffffffffffffffffffffff))) { revert(0, 0) }
+            }
+            function abi_decode_string_calldata(offset, end) -> arrayPos, length
+            {
+                if iszero(slt(add(offset, 0x1f), end)) { revert(0, 0) }
+                length := calldataload(offset)
+                if gt(length, 0xffffffffffffffff) { revert(0, 0) }
+                arrayPos := add(offset, 0x20)
+                if gt(add(add(offset, length), 0x20), end) { revert(0, 0) }
+            }
+            function abi_decode_addresst_string_calldata(dataEnd) -> value0, value1, value2
+            {
+                if slt(add(dataEnd, 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 64) { revert(0, 0) }
+                let value := /** @src -1:-1:-1 */ 0
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                value := calldataload(4)
+                if iszero(eq(value, and(value, 0xffffffffffffffffffffffffffffffffffffffff))) { revert(0, 0) }
+                value0 := value
+                let offset := calldataload(36)
+                if gt(offset, 0xffffffffffffffff) { revert(0, 0) }
+                let value1_1, value2_1 := abi_decode_string_calldata(add(4, offset), dataEnd)
+                value1 := value1_1
+                value2 := value2_1
+            }
+            function abi_decode_struct_Config_calldata(dataEnd) -> value0
+            {
+                if slt(add(dataEnd, 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 32) { revert(0, 0) }
+                let offset := calldataload(4)
+                if gt(offset, 0xffffffffffffffff) { revert(0, 0) }
+                if slt(add(sub(dataEnd, offset), 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc), 160)
+                {
+                    revert(/** @src -1:-1:-1 */ 0, 0)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                value0 := add(4, offset)
+            }
+            function abi_encode_string(value, pos) -> end
+            {
+                let length := mload(value)
+                mstore(pos, length)
+                let i := 0
+                for { } lt(i, length) { i := add(i, 0x20) }
+                {
+                    mstore(add(add(pos, i), 0x20), mload(add(add(value, i), 0x20)))
+                }
+                mstore(add(add(pos, length), 0x20), 0)
+                end := add(add(pos, and(add(length, 31), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0)), 0x20)
+            }
+            /// @ast-id 45868 @src 31:10886:11134  "function read_bytes32( address signer, bytes32 key )..."
+            function fun_read_bytes32(var_signer, var_key) -> var_value
+            {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let _1 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 31:11063:11080  "ValueType.BYTES32" */ 2)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot)
+                let dataSlot_1 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                /// @src 32:7073:7156  "if(  key_metadata.timestamp == 0  )  revert KeyNotSet({ signer: signer, key: key })"
+                if /** @src 32:7078:7105  "key_metadata.timestamp == 0" */ iszero(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ sload(/** @src 32:7078:7100  "key_metadata.timestamp" */ add(dataSlot_1, 1)))
+                /// @src 32:7073:7156  "if(  key_metadata.timestamp == 0  )  revert KeyNotSet({ signer: signer, key: key })"
+                {
+                    /// @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })"
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })" */ 0xfa8cc26e00000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })" */ 4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(36, var_key)
+                    /// @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })"
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68)
+                }
+                let value := and(sload(/** @src 32:7171:7194  "key_metadata.value_type" */ dataSlot_1), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xff)
+                if iszero(lt(/** @src 31:11063:11080  "ValueType.BYTES32" */ 2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4))
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x21)
+                    revert(0, 0x24)
+                }
+                validator_assert_enum_ValueType(value)
+                /// @src 32:7166:7393  "if(  key_metadata.value_type != expected_value_type  )..."
+                if /** @src 32:7171:7217  "key_metadata.value_type != expected_value_type" */ iszero(eq(value, /** @src 31:11063:11080  "ValueType.BYTES32" */ 2))
+                /// @src 32:7166:7393  "if(  key_metadata.value_type != expected_value_type  )..."
+                {
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    let _2 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(0x40)
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    mstore(_2, 0x22b4be1f00000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ add(_2, 4), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), var_key)
+                    validator_assert_enum_ValueType(value)
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68), value)
+                    if iszero(lt(/** @src 31:11063:11080  "ValueType.BYTES32" */ 2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4))
+                    {
+                        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                        mstore(4, 0x21)
+                        revert(0, 0x24)
+                    }
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 100), /** @src 31:11063:11080  "ValueType.BYTES32" */ 2)
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    revert(_2, 132)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 31:11101:11110  "_bytes32s" */ 0x04)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot_2 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot_2)
+                /// @src 31:11094:11127  "return _bytes32s[ signer ][ key ]"
+                var_value := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ sload(keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40))
+            }
+            function finalize_allocation_7425(memPtr)
+            {
+                let newFreePtr := add(memPtr, /** @src 32:6447:6463  "config.addresses" */ 64)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr))
+                {
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x41)
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x24)
+                }
+                mstore(/** @src 32:6447:6463  "config.addresses" */ 64, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ newFreePtr)
+            }
+            function finalize_allocation(memPtr, size)
+            {
+                let newFreePtr := add(memPtr, and(add(size, 31), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0))
+                if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr))
+                {
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x41)
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x24)
+                }
+                mstore(64, newFreePtr)
+            }
+            function abi_decode_available_length_bytes(src, length, end) -> array
+            {
+                let size := /** @src -1:-1:-1 */ 0
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                if gt(length, 0xffffffffffffffff)
+                {
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x41)
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x24)
+                }
+                size := add(and(add(length, 31), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0), 0x20)
+                let memPtr := mload(64)
+                finalize_allocation(memPtr, size)
+                array := memPtr
+                mstore(memPtr, length)
+                if gt(add(src, length), end)
+                {
+                    revert(/** @src -1:-1:-1 */ 0, 0)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                calldatacopy(add(memPtr, 0x20), src, length)
+                mstore(add(add(memPtr, length), 0x20), /** @src -1:-1:-1 */ 0)
+            }
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            function abi_encode_bytes_calldata(start, length, pos) -> end
+            {
+                mstore(pos, length)
+                calldatacopy(add(pos, 0x20), start, length)
+                mstore(add(add(pos, length), 0x20), /** @src -1:-1:-1 */ 0)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                end := add(add(pos, and(add(length, 31), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0)), 0x20)
+            }
+            function array_allocation_size_array_uint256_dyn(length) -> size
+            {
+                if gt(length, 0xffffffffffffffff)
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x41)
+                    revert(0, 0x24)
+                }
+                size := add(shl(5, length), 0x20)
+            }
+            /// @ast-id 45826 @src 31:9151:9400  "function read_address( address signer, bytes32 key )..."
+            function fun_read_address(var_signer, var_key) -> var_value
+            {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let _1 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 32:7033:7046  "_key_metadata" */ 0x02)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot)
+                let dataSlot_1 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                /// @src 32:7073:7156  "if(  key_metadata.timestamp == 0  )  revert KeyNotSet({ signer: signer, key: key })"
+                if /** @src 32:7078:7105  "key_metadata.timestamp == 0" */ iszero(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ sload(/** @src 32:7078:7100  "key_metadata.timestamp" */ add(dataSlot_1, /** @src 31:9328:9345  "ValueType.ADDRESS" */ 1)))
+                /// @src 32:7073:7156  "if(  key_metadata.timestamp == 0  )  revert KeyNotSet({ signer: signer, key: key })"
+                {
+                    /// @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })"
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })" */ 0xfa8cc26e00000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })" */ 4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(36, var_key)
+                    /// @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })"
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68)
+                }
+                let value := and(sload(/** @src 32:7171:7194  "key_metadata.value_type" */ dataSlot_1), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xff)
+                if iszero(lt(/** @src 31:9328:9345  "ValueType.ADDRESS" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4))
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x21)
+                    revert(0, 0x24)
+                }
+                validator_assert_enum_ValueType(value)
+                /// @src 32:7166:7393  "if(  key_metadata.value_type != expected_value_type  )..."
+                if /** @src 32:7171:7217  "key_metadata.value_type != expected_value_type" */ iszero(eq(value, /** @src 31:9328:9345  "ValueType.ADDRESS" */ 1))
+                /// @src 32:7166:7393  "if(  key_metadata.value_type != expected_value_type  )..."
+                {
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    let _2 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(0x40)
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    mstore(_2, 0x22b4be1f00000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ add(_2, 4), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), var_key)
+                    validator_assert_enum_ValueType(value)
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68), value)
+                    if iszero(lt(/** @src 31:9328:9345  "ValueType.ADDRESS" */ 1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4))
+                    {
+                        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                        mstore(4, 0x21)
+                        revert(0, 0x24)
+                    }
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 100), /** @src 31:9328:9345  "ValueType.ADDRESS" */ 1)
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    revert(_2, 132)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 31:9366:9376  "_addresses" */ 0x03)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot_2 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot_2)
+                /// @src 31:9359:9393  "return _addresses[ signer ][ key ]"
+                var_value := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ and(sload(keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)), 0xffffffffffffffffffffffffffffffffffffffff)
+            }
+            /// @ast-id 45910 @src 31:12614:12853  "function read_uint( address signer, bytes32 key )..."
+            function fun_read_uint(var_signer, var_key) -> var_value
+            {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let _1 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 32:7033:7046  "_key_metadata" */ 0x02)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot)
+                let dataSlot_1 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                /// @src 32:7073:7156  "if(  key_metadata.timestamp == 0  )  revert KeyNotSet({ signer: signer, key: key })"
+                if /** @src 32:7078:7105  "key_metadata.timestamp == 0" */ iszero(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ sload(/** @src 32:7078:7100  "key_metadata.timestamp" */ add(dataSlot_1, 1)))
+                /// @src 32:7073:7156  "if(  key_metadata.timestamp == 0  )  revert KeyNotSet({ signer: signer, key: key })"
+                {
+                    /// @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })"
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })" */ 0xfa8cc26e00000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })" */ 4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(36, var_key)
+                    /// @src 32:7117:7156  "KeyNotSet({ signer: signer, key: key })"
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68)
+                }
+                let value := and(sload(/** @src 32:7171:7194  "key_metadata.value_type" */ dataSlot_1), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xff)
+                if iszero(lt(/** @src 31:12788:12802  "ValueType.UINT" */ 3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4))
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x21)
+                    revert(0, 0x24)
+                }
+                validator_assert_enum_ValueType(value)
+                /// @src 32:7166:7393  "if(  key_metadata.value_type != expected_value_type  )..."
+                if /** @src 32:7171:7217  "key_metadata.value_type != expected_value_type" */ iszero(eq(value, /** @src 31:12788:12802  "ValueType.UINT" */ 3))
+                /// @src 32:7166:7393  "if(  key_metadata.value_type != expected_value_type  )..."
+                {
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    let _2 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(0x40)
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    mstore(_2, 0x22b4be1f00000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ add(_2, 4), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), var_key)
+                    validator_assert_enum_ValueType(value)
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68), value)
+                    if iszero(lt(/** @src 31:12788:12802  "ValueType.UINT" */ 3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4))
+                    {
+                        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                        mstore(4, 0x21)
+                        revert(0, 0x24)
+                    }
+                    mstore(add(/** @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 100), /** @src 31:12788:12802  "ValueType.UINT" */ 3)
+                    /// @src 32:7250:7382  "KeyTypeMismatch({ signer: signer, key: key, current_value_type: key_metadata.value_type, expected_value_type: expected_value_type })"
+                    revert(_2, 132)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 31:12823:12829  "_uints" */ 0x05)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot_2 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot_2)
+                /// @src 31:12816:12846  "return _uints[ signer ][ key ]"
+                var_value := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ sload(keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40))
+            }
+            function validator_assert_enum_ValueType(value)
+            {
+                if iszero(lt(value, 4))
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x21)
+                    revert(0, 0x24)
+                }
+            }
+            function abi_encode_string_calldata_uint256(headStart, value0, value1, value2) -> tail
+            {
+                mstore(headStart, 64)
+                tail := abi_encode_bytes_calldata(value0, value1, add(headStart, 64))
+                mstore(add(headStart, 32), value2)
+            }
+            /// @ast-id 46497 @src 32:7756:8248  "function _key_to_bytes32( string calldata key )..."
+            function fun_key_to_bytes32(var_key_46460_offset, var_key_length) -> var_key_bytes32
+            {
+                /// @src 32:7917:7967  "if(  key_bytes.length == 0  )   revert EmptyKey( )"
+                if /** @src 32:7922:7943  "key_bytes.length == 0" */ iszero(var_key_length)
+                /// @src 32:7917:7967  "if(  key_bytes.length == 0  )   revert EmptyKey( )"
+                {
+                    /// @src 32:7956:7967  "EmptyKey( )"
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 32:7956:7967  "EmptyKey( )" */ 0x3cd69fac00000000000000000000000000000000000000000000000000000000)
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 32:7956:7967  "EmptyKey( )" */ 4)
+                }
+                /// @src 32:7977:8066  "if(  key_bytes.length > 32  )   revert KeyTooLong({ key: key, length: key_bytes.length })"
+                if /** @src 32:7982:8003  "key_bytes.length > 32" */ gt(var_key_length, /** @src 32:8001:8003  "32" */ 0x20)
+                /// @src 32:7977:8066  "if(  key_bytes.length > 32  )   revert KeyTooLong({ key: key, length: key_bytes.length })"
+                {
+                    /// @src 32:8016:8066  "KeyTooLong({ key: key, length: key_bytes.length })"
+                    let _1 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 32:8016:8066  "KeyTooLong({ key: key, length: key_bytes.length })"
+                    mstore(_1, 0x603b97e500000000000000000000000000000000000000000000000000000000)
+                    revert(_1, sub(abi_encode_string_calldata_uint256(add(_1, 4), var_key_46460_offset, var_key_length, var_key_length), _1))
+                }
+                /// @src 32:8223:8241  "bytes32(key_bytes)"
+                let value := /** @src -1:-1:-1 */ 0
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                value := calldataload(var_key_46460_offset)
+                if lt(var_key_length, /** @src 32:8001:8003  "32" */ 0x20)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                {
+                    value := and(value, shl(shl(3, sub(/** @src 32:8001:8003  "32" */ 0x20, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key_length)), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff))
+                }
+                /// @src 32:8216:8241  "return bytes32(key_bytes)"
+                var_key_bytes32 := value
+            }
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            function access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(base_ref, ptr_to_tail) -> addr, length
+            {
+                let rel_offset_of_tail := calldataload(ptr_to_tail)
+                if iszero(slt(rel_offset_of_tail, add(sub(calldatasize(), base_ref), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe1))) { revert(0, 0) }
+                let addr_1 := add(base_ref, rel_offset_of_tail)
+                length := calldataload(addr_1)
+                if gt(length, 0xffffffffffffffff) { revert(0, 0) }
+                addr := add(addr_1, 0x20)
+                if sgt(addr, sub(calldatasize(), shl(5, length))) { revert(0, 0) }
+            }
+            function calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(base_ref, length, index) -> addr
+            {
+                if iszero(lt(index, length))
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x32)
+                    revert(0, 0x24)
+                }
+                let addr_1 := /** @src -1:-1:-1 */ 0
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let rel_offset_of_tail := calldataload(add(base_ref, shl(5, index)))
+                if iszero(slt(rel_offset_of_tail, add(sub(calldatasize(), base_ref), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc1)))
+                {
+                    revert(/** @src -1:-1:-1 */ 0, 0)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                addr_1 := add(base_ref, rel_offset_of_tail)
+                addr := addr_1
+            }
+            /// @ast-id 46156 @src 32:2570:3157  "function _write_config_internal( Config calldata config, address signer ) internal..."
+            function fun_write_config_internal(var_config_offset, var_signer)
+            {
+                /// @src 32:6447:6463  "config.addresses"
+                let _1 := add(var_config_offset, 64)
+                let expr_offset, expr_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _1)
+                /// @src 32:6473:6488  "config.bytes32s"
+                let _2 := add(var_config_offset, 96)
+                let expr_offset_1, expr_length_1 := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _2)
+                /// @src 32:6447:6495  "config.addresses.length + config.bytes32s.length"
+                let expr := checked_add_uint256(expr_length, /** @src 32:6473:6495  "config.bytes32s.length" */ expr_length_1)
+                /// @src 32:6498:6510  "config.uints"
+                let _3 := add(var_config_offset, 128)
+                let expr_offset_2, expr_length_2 := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _3)
+                /// @src 32:6442:6548  "if(  config.addresses.length + config.bytes32s.length + config.uints.length == 0  )  revert EmptyConfig( )"
+                if /** @src 32:6447:6522  "config.addresses.length + config.bytes32s.length + config.uints.length == 0" */ iszero(/** @src 32:6447:6517  "config.addresses.length + config.bytes32s.length + config.uints.length" */ checked_add_uint256(expr, /** @src 32:6498:6517  "config.uints.length" */ expr_length_2))
+                /// @src 32:6442:6548  "if(  config.addresses.length + config.bytes32s.length + config.uints.length == 0  )  revert EmptyConfig( )"
+                {
+                    /// @src 32:6534:6548  "EmptyConfig( )"
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6534:6548  "EmptyConfig( )" */ 0x60e8b63a00000000000000000000000000000000000000000000000000000000)
+                    revert(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6534:6548  "EmptyConfig( )" */ 4)
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let value := calldataload(var_config_offset)
+                /// @src 32:6558:6703  "if(  config.chain_id != block.chainid  )              revert ChainIdMismatch({ signed_chain_id: config.chain_id, block_chain_id: block.chainid })"
+                if /** @src 32:6563:6595  "config.chain_id != block.chainid" */ iszero(eq(value, /** @src 32:6582:6595  "block.chainid" */ chainid()))
+                /// @src 32:6558:6703  "if(  config.chain_id != block.chainid  )              revert ChainIdMismatch({ signed_chain_id: config.chain_id, block_chain_id: block.chainid })"
+                {
+                    /// @src 32:6619:6703  "ChainIdMismatch({ signed_chain_id: config.chain_id, block_chain_id: block.chainid })"
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6619:6703  "ChainIdMismatch({ signed_chain_id: config.chain_id, block_chain_id: block.chainid })" */ 0x2196760800000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6619:6703  "ChainIdMismatch({ signed_chain_id: config.chain_id, block_chain_id: block.chainid })" */ 4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ value)
+                    mstore(36, /** @src 32:6582:6595  "block.chainid" */ chainid())
+                    /// @src 32:6619:6703  "ChainIdMismatch({ signed_chain_id: config.chain_id, block_chain_id: block.chainid })"
+                    revert(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68)
+                }
+                let value_1 := calldataload(/** @src 32:6718:6734  "config.timestamp" */ add(var_config_offset, 32))
+                /// @src 32:6713:6865  "if(  config.timestamp > block.timestamp  )            revert TimestampInFuture({ signed_timestamp: config.timestamp, block_timestamp: block.timestamp })"
+                if /** @src 32:6718:6752  "config.timestamp > block.timestamp" */ gt(value_1, /** @src 32:6737:6752  "block.timestamp" */ timestamp())
+                /// @src 32:6713:6865  "if(  config.timestamp > block.timestamp  )            revert TimestampInFuture({ signed_timestamp: config.timestamp, block_timestamp: block.timestamp })"
+                {
+                    /// @src 32:6774:6865  "TimestampInFuture({ signed_timestamp: config.timestamp, block_timestamp: block.timestamp })"
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6774:6865  "TimestampInFuture({ signed_timestamp: config.timestamp, block_timestamp: block.timestamp })" */ 0x45e2dc2200000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6774:6865  "TimestampInFuture({ signed_timestamp: config.timestamp, block_timestamp: block.timestamp })" */ 4, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ value_1)
+                    mstore(36, /** @src 32:6737:6752  "block.timestamp" */ timestamp())
+                    /// @src 32:6774:6865  "TimestampInFuture({ signed_timestamp: config.timestamp, block_timestamp: block.timestamp })"
+                    revert(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68)
+                }
+                /// @src 32:2766:2776  "uint i = 0"
+                let var_i := /** @src 32:6521:6522  "0" */ 0x00
+                /// @src 32:2760:2886  "for(  uint i = 0  ;  i < config.addresses.length  ;  i++  )  _write_address( signer, config.addresses[ i ], signed_timestamp )"
+                for { }
+                /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1
+                /// @src 32:2766:2776  "uint i = 0"
+                {
+                    /// @src 32:2813:2816  "i++"
+                    var_i := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 32:2813:2816  "i++" */ var_i, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1)
+                }
+                /// @src 32:2813:2816  "i++"
+                {
+                    /// @src 32:2785:2801  "config.addresses"
+                    let expr_46095_offset, expr_46095_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _1)
+                    /// @src 32:2781:2808  "i < config.addresses.length"
+                    if iszero(lt(var_i, /** @src 32:2785:2808  "config.addresses.length" */ expr_46095_length))
+                    /// @src 32:2781:2808  "i < config.addresses.length"
+                    { break }
+                    /// @src 32:2845:2861  "config.addresses"
+                    let expr_46104_offset, expr_46104_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _1)
+                    /// @src 32:2845:2866  "config.addresses[ i ]"
+                    let _4 := calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(expr_46104_offset, expr_46104_length, var_i)
+                    /// @src 32:3720:3729  "entry.key"
+                    let expr_offset_3, expr_length_3 := access_calldata_tail_string_calldata(_4, _4)
+                    /// @src 32:3703:3731  "_key_to_bytes32( entry.key )"
+                    let expr_1 := fun_key_to_bytes32(expr_offset_3, expr_length_3)
+                    /// @src 32:3776:3792  "signed_timestamp"
+                    fun_validate_key_write(var_signer, expr_1, value_1)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let memPtr := mload(/** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    finalize_allocation_7425(memPtr)
+                    let _5 := /** @src 32:6521:6522  "0" */ 0x00
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    _5 := /** @src 32:6521:6522  "0" */ _5
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(memPtr, 1)
+                    /// @src 32:3840:3956  "KeyMetadata({..."
+                    let _6 := add(memPtr, /** @src 32:6718:6734  "config.timestamp" */ 32)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_6, value_1)
+                    let _7 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _7)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:3805:3818  "_key_metadata" */ 0x02)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataSlot := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr_1)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ dataSlot)
+                    let dataSlot_1 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let _8 := mload(memPtr)
+                    validator_assert_enum_ValueType(_8)
+                    validator_assert_enum_ValueType(_8)
+                    let value_2 := and(sload(dataSlot_1), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00)
+                    sstore(dataSlot_1, or(value_2, and(_8, 255)))
+                    sstore(add(dataSlot_1, 1), mload(_6))
+                    /// @src 32:3999:4010  "entry.value"
+                    let _9 := add(_4, /** @src 32:6718:6734  "config.timestamp" */ 32)
+                    /// @src 32:3999:4010  "entry.value"
+                    let expr_2 := read_from_calldatat_address(_9)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _7)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:3967:3977  "_addresses" */ 0x03)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataSlot_2 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr_1)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ dataSlot_2)
+                    let dataSlot_3 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    sstore(dataSlot_3, or(and(sload(dataSlot_3), 0xffffffffffffffffffffffff0000000000000000000000000000000000000000), and(expr_2, 0xffffffffffffffffffffffffffffffffffffffff)))
+                    /// @src 32:4055:4066  "entry.value"
+                    let expr_3 := read_from_calldatat_address(_9)
+                    /// @src 32:4026:4068  "AddressWritten( signer, key, entry.value )"
+                    let _10 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_10, and(expr_3, 0xffffffffffffffffffffffffffffffffffffffff))
+                    /// @src 32:4026:4068  "AddressWritten( signer, key, entry.value )"
+                    log3(_10, /** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:4026:4068  "AddressWritten( signer, key, entry.value )" */ 0xc8b554379940a0510c2f82d774aa940f6b18ede065562753235215235f10dcd4, _7, expr_1)
+                }
+                /// @src 32:2902:2912  "uint i = 0"
+                let var_i_1 := /** @src 32:6521:6522  "0" */ 0x00
+                /// @src 32:2896:3021  "for(  uint i = 0  ;  i < config.bytes32s.length   ;  i++  )  _write_bytes32( signer, config.bytes32s[ i ], signed_timestamp )"
+                for { }
+                /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1
+                /// @src 32:2902:2912  "uint i = 0"
+                {
+                    /// @src 32:2949:2952  "i++"
+                    var_i_1 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 32:2949:2952  "i++" */ var_i_1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1)
+                }
+                /// @src 32:2949:2952  "i++"
+                {
+                    /// @src 32:2921:2936  "config.bytes32s"
+                    let expr_46117_offset, expr_46117_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _2)
+                    /// @src 32:2917:2943  "i < config.bytes32s.length"
+                    if iszero(lt(var_i_1, /** @src 32:2921:2943  "config.bytes32s.length" */ expr_46117_length))
+                    /// @src 32:2917:2943  "i < config.bytes32s.length"
+                    { break }
+                    /// @src 32:2981:2996  "config.bytes32s"
+                    let expr_46126_offset, expr_46126_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _2)
+                    /// @src 32:2981:3001  "config.bytes32s[ i ]"
+                    let _11 := calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(expr_46126_offset, expr_46126_length, var_i_1)
+                    /// @src 32:4233:4242  "entry.key"
+                    let expr_offset_4, expr_length_4 := access_calldata_tail_string_calldata(_11, _11)
+                    /// @src 32:4216:4244  "_key_to_bytes32( entry.key )"
+                    let expr_4 := fun_key_to_bytes32(expr_offset_4, expr_length_4)
+                    /// @src 32:4289:4305  "signed_timestamp"
+                    fun_validate_key_write(var_signer, expr_4, value_1)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let memPtr_1 := mload(/** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    finalize_allocation_7425(memPtr_1)
+                    let _12 := /** @src 32:6521:6522  "0" */ 0x00
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    _12 := /** @src 32:6521:6522  "0" */ _12
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(memPtr_1, /** @src 32:3805:3818  "_key_metadata" */ 0x02)
+                    /// @src 32:4353:4469  "KeyMetadata({..."
+                    let _13 := add(memPtr_1, /** @src 32:6718:6734  "config.timestamp" */ 32)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_13, value_1)
+                    let _14 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _14)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:3805:3818  "_key_metadata" */ 0x02)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataSlot_4 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr_4)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ dataSlot_4)
+                    let dataSlot_5 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let _15 := mload(memPtr_1)
+                    validator_assert_enum_ValueType(_15)
+                    validator_assert_enum_ValueType(_15)
+                    let value_3 := and(sload(dataSlot_5), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00)
+                    sstore(dataSlot_5, or(value_3, and(_15, 255)))
+                    sstore(add(dataSlot_5, 1), mload(_13))
+                    let value_4 := calldataload(/** @src 32:4511:4522  "entry.value" */ add(_11, /** @src 32:6718:6734  "config.timestamp" */ 32))
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _14)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 4)
+                    let dataSlot_6 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr_4)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ dataSlot_6)
+                    sstore(keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ value_4)
+                    /// @src 32:4538:4580  "Bytes32Written( signer, key, entry.value )"
+                    let _16 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_16, value_4)
+                    /// @src 32:4538:4580  "Bytes32Written( signer, key, entry.value )"
+                    log3(_16, /** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:4538:4580  "Bytes32Written( signer, key, entry.value )" */ 0xcdd414ff52d02ae90ae11c02aeb76df6aff92b1b4063de302891cc569ef2d4d3, _14, expr_4)
+                }
+                /// @src 32:3037:3047  "uint i = 0"
+                let var_i_2 := /** @src 32:6521:6522  "0" */ 0x00
+                /// @src 32:3031:3150  "for(  uint i = 0  ;  i < config.uints.length      ;  i++  )  _write_uint( signer, config.uints[ i ], signed_timestamp )"
+                for { }
+                /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1
+                /// @src 32:3037:3047  "uint i = 0"
+                {
+                    /// @src 32:3084:3087  "i++"
+                    var_i_2 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 32:3084:3087  "i++" */ var_i_2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1)
+                }
+                /// @src 32:3084:3087  "i++"
+                {
+                    /// @src 32:3056:3068  "config.uints"
+                    let expr_46139_offset, expr_46139_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _3)
+                    /// @src 32:3052:3075  "i < config.uints.length"
+                    if iszero(lt(var_i_2, /** @src 32:3056:3075  "config.uints.length" */ expr_46139_length))
+                    /// @src 32:3052:3075  "i < config.uints.length"
+                    { break }
+                    /// @src 32:3113:3125  "config.uints"
+                    let expr_46148_offset, expr_length_5 := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_offset, _3)
+                    /// @src 32:3113:3130  "config.uints[ i ]"
+                    let _17 := calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(expr_46148_offset, expr_length_5, var_i_2)
+                    /// @src 32:4739:4748  "entry.key"
+                    let expr_offset_5, expr_length_6 := access_calldata_tail_string_calldata(_17, _17)
+                    /// @src 32:4722:4750  "_key_to_bytes32( entry.key )"
+                    let expr_5 := fun_key_to_bytes32(expr_offset_5, expr_length_6)
+                    /// @src 32:4795:4811  "signed_timestamp"
+                    fun_validate_key_write(var_signer, expr_5, value_1)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let memPtr_2 := mload(/** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    finalize_allocation_7425(memPtr_2)
+                    let _18 := /** @src 32:6521:6522  "0" */ 0x00
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    _18 := /** @src 32:6521:6522  "0" */ _18
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(memPtr_2, /** @src 32:3967:3977  "_addresses" */ 0x03)
+                    /// @src 32:4859:4972  "KeyMetadata({..."
+                    let _19 := add(memPtr_2, /** @src 32:6718:6734  "config.timestamp" */ 32)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_19, value_1)
+                    let _20 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _20)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:3805:3818  "_key_metadata" */ 0x02)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataSlot_7 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr_5)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ dataSlot_7)
+                    let dataSlot_8 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let _21 := mload(memPtr_2)
+                    validator_assert_enum_ValueType(_21)
+                    validator_assert_enum_ValueType(_21)
+                    let value_5 := and(sload(dataSlot_8), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00)
+                    sstore(dataSlot_8, or(value_5, and(_21, 255)))
+                    sstore(add(dataSlot_8, 1), mload(_19))
+                    let value_6 := calldataload(/** @src 32:5011:5022  "entry.value" */ add(_17, /** @src 32:6718:6734  "config.timestamp" */ 32))
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _20)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:4983:4989  "_uints" */ 0x05)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataSlot_9 := keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6521:6522  "0" */ 0x00, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr_5)
+                    mstore(/** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ dataSlot_9)
+                    sstore(keccak256(/** @src 32:6521:6522  "0" */ 0x00, /** @src 32:6447:6463  "config.addresses" */ 64), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ value_6)
+                    /// @src 32:5038:5077  "UintWritten( signer, key, entry.value )"
+                    let _22 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 32:6447:6463  "config.addresses" */ 64)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_22, value_6)
+                    /// @src 32:5038:5077  "UintWritten( signer, key, entry.value )"
+                    log3(_22, /** @src 32:6718:6734  "config.timestamp" */ 32, /** @src 32:5038:5077  "UintWritten( signer, key, entry.value )" */ 0x3f0d3e0793365f5515f3680c8dbd59417fe8fdf8300acd41c4c42d336b2e9687, _20, expr_5)
+                }
+            }
+            /// @ast-id 42009 @src 26:3845:4107  "function _domainSeparatorV4() internal view returns (bytes32) {..."
+            function fun_domainSeparatorV4() -> var_
+            {
+                /// @src 26:3898:3905  "bytes32"
+                var_ := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                /// @src 26:3921:3984  "address(this) == _cachedThis && block.chainid == _cachedChainId"
+                let expr := /** @src 26:3921:3949  "address(this) == _cachedThis" */ eq(/** @src 26:3929:3933  "this" */ address(), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ and(/** @src 26:3938:3949  "_cachedThis" */ loadimmutable("41911"), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xffffffffffffffffffffffffffffffffffffffff))
+                /// @src 26:3921:3984  "address(this) == _cachedThis && block.chainid == _cachedChainId"
+                if expr
+                {
+                    expr := /** @src 26:3953:3984  "block.chainid == _cachedChainId" */ eq(/** @src 26:3953:3966  "block.chainid" */ chainid(), /** @src 26:3970:3984  "_cachedChainId" */ loadimmutable("41909"))
+                }
+                /// @src 26:3917:4101  "if (address(this) == _cachedThis && block.chainid == _cachedChainId) {..."
+                switch expr
+                case 0 {
+                    /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+                    let expr_mpos := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+                    let _1 := add(expr_mpos, 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(_1, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 64), /** @src 26:4226:4237  "_hashedName" */ loadimmutable("41913"))
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 96), /** @src 26:4239:4253  "_hashedVersion" */ loadimmutable("41915"))
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 128), /** @src 26:4255:4268  "block.chainid" */ chainid())
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ add(/** @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))" */ expr_mpos, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 160), /** @src 26:3929:3933  "this" */ address())
+                    /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+                    mstore(expr_mpos, /** @src 26:2079:2174  "keccak256(\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\")" */ 160)
+                    /// @src 26:4204:4284  "abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this))"
+                    finalize_allocation(expr_mpos, 192)
+                    /// @src 26:4060:4090  "return _buildDomainSeparator()"
+                    var_ := /** @src 26:4194:4285  "keccak256(abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this)))" */ keccak256(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1, mload(/** @src 26:4194:4285  "keccak256(abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this)))" */ expr_mpos))
+                    /// @src 26:4060:4090  "return _buildDomainSeparator()"
+                    leave
+                }
+                default /// @src 26:3917:4101  "if (address(this) == _cachedThis && block.chainid == _cachedChainId) {..."
+                {
+                    /// @src 26:4000:4029  "return _cachedDomainSeparator"
+                    var_ := /** @src 26:4007:4029  "_cachedDomainSeparator" */ loadimmutable("41907")
+                    /// @src 26:4000:4029  "return _cachedDomainSeparator"
+                    leave
+                }
+            }
+            /// @ast-id 46946 @src 35:1276:2271  "function is_valid_signature( address signer, bytes32 _hash, bytes memory signature, bool is_eip1271 ) internal view returns ( bool )..."
+            function fun_is_valid_signature(var_signer, var__hash, var_signature_46906_mpos, var_is_eip1271) -> var
+            {
+                /// @src 35:1402:1406  "bool"
+                var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                /// @src 35:1524:1571  "if(  _hash == bytes32(0)  )        return false"
+                if /** @src 35:1529:1548  "_hash == bytes32(0)" */ iszero(var__hash)
+                /// @src 35:1524:1571  "if(  _hash == bytes32(0)  )        return false"
+                {
+                    /// @src 35:1559:1571  "return false"
+                    var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                    /// @src 35:1559:1571  "return false"
+                    leave
+                }
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let _1 := and(/** @src 35:1623:1643  "signer == address(0)" */ var_signer, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xffffffffffffffffffffffffffffffffffffffff)
+                /// @src 35:1618:1665  "if(  signer == address(0)  )       return false"
+                if /** @src 35:1623:1643  "signer == address(0)" */ iszero(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                /// @src 35:1618:1665  "if(  signer == address(0)  )       return false"
+                {
+                    /// @src 35:1653:1665  "return false"
+                    var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                    /// @src 35:1653:1665  "return false"
+                    leave
+                }
+                /// @src 35:2017:2099  "if(  is_eip1271  )  return is_valid_contract_signature( signer, _hash, signature )"
+                if var_is_eip1271
+                {
+                    /// @src 35:2037:2099  "return is_valid_contract_signature( signer, _hash, signature )"
+                    var := /** @src 35:2044:2099  "is_valid_contract_signature( signer, _hash, signature )" */ fun_is_valid_contract_signature(var_signer, var__hash, var_signature_46906_mpos)
+                    /// @src 35:2037:2099  "return is_valid_contract_signature( signer, _hash, signature )"
+                    leave
+                }
+                /// @src 35:2779:2815  "ECDSA.tryRecover( _hash, signature )"
+                let expr_component, expr_component_1, expr_component_2 := fun_tryRecover(var__hash, var_signature_46906_mpos)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let value := 0
+                value := 0
+                validator_assert_enum_ValueType(expr_component_1)
+                /// @src 35:2898:2966  "_error == ECDSA.RecoverError.NoError  &&  recovered_signer == signer"
+                let expr := /** @src 35:2898:2934  "_error == ECDSA.RecoverError.NoError" */ iszero(expr_component_1)
+                /// @src 35:2898:2966  "_error == ECDSA.RecoverError.NoError  &&  recovered_signer == signer"
+                if expr
+                {
+                    expr := /** @src 35:2940:2966  "recovered_signer == signer" */ eq(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ and(/** @src 35:2940:2966  "recovered_signer == signer" */ expr_component, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xffffffffffffffffffffffffffffffffffffffff), _1)
+                }
+                /// @src 35:2135:2194  "return is_valid_ecdsa_signature( signer, _hash, signature )"
+                var := expr
+            }
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            function checked_add_uint256(x, y) -> sum
+            {
+                sum := add(x, y)
+                if gt(x, sum)
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x11)
+                    revert(0, 0x24)
+                }
+            }
+            function access_calldata_tail_string_calldata(base_ref, ptr_to_tail) -> addr, length
+            {
+                let rel_offset_of_tail := calldataload(ptr_to_tail)
+                if iszero(slt(rel_offset_of_tail, add(sub(calldatasize(), base_ref), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe1))) { revert(0, 0) }
+                let addr_1 := add(base_ref, rel_offset_of_tail)
+                length := calldataload(addr_1)
+                if gt(length, 0xffffffffffffffff) { revert(0, 0) }
+                addr := add(addr_1, 0x20)
+                if sgt(addr, sub(calldatasize(), length)) { revert(0, 0) }
+            }
+            function read_from_calldatat_address(ptr) -> returnValue
+            {
+                let value := calldataload(ptr)
+                if iszero(eq(value, and(value, 0xffffffffffffffffffffffffffffffffffffffff))) { revert(0, 0) }
+                returnValue := value
+            }
+            /// @ast-id 46632 @src 34:1174:2379  "function calc_config_struct_hash( Config calldata config )..."
+            function fun_calc_config_struct_hash(var_config_46590_offset) -> var_result
+            {
+                /// @src 34:1345:1361  "config.addresses"
+                let expr_46599_offset, expr_46599_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_46590_offset, add(var_config_46590_offset, 64))
+                /// @src 34:2543:2574  "new bytes32[]( entries.length )"
+                let expr_mpos := allocate_and_zero_memory_array_array_bytes32_dyn(expr_46599_length)
+                /// @src 34:2591:2604  "uint256 i = 0"
+                let var_i := /** @src -1:-1:-1 */ 0
+                /// @src 34:2585:2728  "for(  uint256 i = 0  ;  i < entries.length  ;  i++  )..."
+                for { }
+                /** @src 34:2609:2627  "i < entries.length" */ lt(var_i, expr_46599_length)
+                /// @src 34:2591:2604  "uint256 i = 0"
+                {
+                    /// @src 34:2632:2635  "i++"
+                    var_i := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 34:2632:2635  "i++" */ var_i, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1)
+                }
+                /// @src 34:2632:2635  "i++"
+                {
+                    /// @src 34:2703:2715  "entries[ i ]"
+                    let _1 := calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(expr_46599_offset, expr_46599_length, var_i)
+                    /// @src 34:4776:4785  "entry.key"
+                    let expr_offset, expr_length := access_calldata_tail_string_calldata(_1, _1)
+                    /// @src 34:4752:4787  "_validate_and_hash_key( entry.key )"
+                    let expr := fun_validate_and_hash_key(expr_offset, expr_length)
+                    /// @src 34:4819:4830  "entry.value"
+                    let expr_1 := read_from_calldatat_address(add(_1, 32))
+                    /// @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    let usr$free_ptr := mload(/** @src 34:1345:1361  "config.addresses" */ 64)
+                    /// @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 34:607:658  "keccak256(\"AddressEntry(string key,address value)\")" */ 0xe9cc1af404fbf6d961f600f72c98af984e9f2a854c58d6e7d0e2c9ebcea4a92f)
+                    /// @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src 34:4819:4830  "entry.value" */ 32, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ expr)
+                    mstore(/** @src 34:1345:1361  "config.addresses" */ 64, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ expr_1)
+                    let var_result_1 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ 0x60)
+                    mstore(/** @src 34:1345:1361  "config.addresses" */ 64, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ usr$free_ptr)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 34:2661:2717  "entry_hashes[ i ]  =  hash_address_entry( entries[ i ] )" */ memory_array_index_access_bytes32_dyn(expr_mpos, var_i), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_result_1)
+                }
+                /// @src 34:2738:3100  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...."
+                let var_result_2 := keccak256(add(expr_mpos, /** @src 34:4819:4830  "entry.value" */ 32), /** @src 34:2738:3100  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ shl(5, mload(expr_mpos)))
+                /// @src 34:1426:1441  "config.bytes32s"
+                let expr_46606_offset, expr_46606_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_46590_offset, add(var_config_46590_offset, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ 0x60))
+                /// @src 34:3270:3301  "new bytes32[]( entries.length )"
+                let expr_mpos_1 := allocate_and_zero_memory_array_array_bytes32_dyn(expr_46606_length)
+                /// @src 34:3318:3331  "uint256 i = 0"
+                let var_i_1 := /** @src -1:-1:-1 */ 0
+                /// @src 34:3312:3455  "for(  uint256 i = 0  ;  i < entries.length  ;  i++  )..."
+                for { }
+                /** @src 34:3336:3354  "i < entries.length" */ lt(var_i_1, expr_46606_length)
+                /// @src 34:3318:3331  "uint256 i = 0"
+                {
+                    /// @src 34:3359:3362  "i++"
+                    var_i_1 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 34:3359:3362  "i++" */ var_i_1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1)
+                }
+                /// @src 34:3359:3362  "i++"
+                {
+                    /// @src 34:3430:3442  "entries[ i ]"
+                    let _2 := calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(expr_46606_offset, expr_46606_length, var_i_1)
+                    /// @src 34:5447:5456  "entry.key"
+                    let expr_offset_1, expr_length_1 := access_calldata_tail_string_calldata(_2, _2)
+                    /// @src 34:5423:5458  "_validate_and_hash_key( entry.key )"
+                    let expr_2 := fun_validate_and_hash_key(expr_offset_1, expr_length_1)
+                    /// @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    let usr$free_ptr_1 := mload(/** @src 34:1345:1361  "config.addresses" */ 64)
+                    /// @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 34:717:768  "keccak256(\"Bytes32Entry(string key,bytes32 value)\")" */ 0xa77f64c7e3d471618c6def4e3128fd8d31182a94a63fe2e7bba9f54717d1296d)
+                    /// @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src 34:4819:4830  "entry.value" */ 32, /** @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ expr_2)
+                    mstore(/** @src 34:1345:1361  "config.addresses" */ 64, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ calldataload(/** @src 34:5490:5501  "entry.value" */ add(_2, /** @src 34:4819:4830  "entry.value" */ 32)))
+                    /// @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    let var_result_3 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ 0x60)
+                    /// @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src 34:1345:1361  "config.addresses" */ 64, /** @src 34:5512:5887  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ usr$free_ptr_1)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 34:3388:3444  "entry_hashes[ i ]  =  hash_bytes32_entry( entries[ i ] )" */ memory_array_index_access_bytes32_dyn(expr_mpos_1, var_i_1), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_result_3)
+                }
+                /// @src 34:3465:3827  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...."
+                let var_result_4 := keccak256(add(expr_mpos_1, /** @src 34:4819:4830  "entry.value" */ 32), /** @src 34:3465:3827  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ shl(/** @src 34:2738:3100  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ 5, /** @src 34:3465:3827  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ mload(expr_mpos_1)))
+                /// @src 34:1503:1515  "config.uints"
+                let expr_46613_offset, expr_46613_length := access_calldata_tail_array_struct_AddressEntry_calldata_dyn_calldata(var_config_46590_offset, add(var_config_46590_offset, 128))
+                /// @src 34:3991:4022  "new bytes32[]( entries.length )"
+                let expr_mpos_2 := allocate_and_zero_memory_array_array_bytes32_dyn(expr_46613_length)
+                /// @src 34:4039:4052  "uint256 i = 0"
+                let var_i_2 := /** @src -1:-1:-1 */ 0
+                /// @src 34:4033:4173  "for(  uint256 i = 0  ;  i < entries.length  ;  i++  )..."
+                for { }
+                /** @src 34:4057:4075  "i < entries.length" */ lt(var_i_2, expr_46613_length)
+                /// @src 34:4039:4052  "uint256 i = 0"
+                {
+                    /// @src 34:4080:4083  "i++"
+                    var_i_2 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 34:4080:4083  "i++" */ var_i_2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 1)
+                }
+                /// @src 34:4080:4083  "i++"
+                {
+                    /// @src 34:4148:4160  "entries[ i ]"
+                    let _3 := calldata_array_index_access_struct_AddressEntry_calldata_dyn_calldata(expr_46613_offset, expr_46613_length, var_i_2)
+                    /// @src 34:6109:6118  "entry.key"
+                    let expr_offset_2, expr_length_2 := access_calldata_tail_string_calldata(_3, _3)
+                    /// @src 34:6085:6120  "_validate_and_hash_key( entry.key )"
+                    let expr_3 := fun_validate_and_hash_key(expr_offset_2, expr_length_2)
+                    /// @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    let usr$free_ptr_2 := mload(/** @src 34:1345:1361  "config.addresses" */ 64)
+                    /// @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 34:827:875  "keccak256(\"UintEntry(string key,uint256 value)\")" */ 0x71b24f5dd7f650e1989d26dc6ee7af2310c3f8e855067842f76482102e9135a8)
+                    /// @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src 34:4819:4830  "entry.value" */ 32, /** @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ expr_3)
+                    mstore(/** @src 34:1345:1361  "config.addresses" */ 64, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ calldataload(/** @src 34:6152:6163  "entry.value" */ add(_3, /** @src 34:4819:4830  "entry.value" */ 32)))
+                    /// @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    let var_result_5 := keccak256(/** @src -1:-1:-1 */ 0, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ 0x60)
+                    /// @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                    mstore(/** @src 34:1345:1361  "config.addresses" */ 64, /** @src 34:6174:6549  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ usr$free_ptr_2)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 34:4109:4162  "entry_hashes[ i ]  =  hash_uint_entry( entries[ i ] )" */ memory_array_index_access_bytes32_dyn(expr_mpos_2, var_i_2), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_result_5)
+                }
+                /// @src 34:4183:4545  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...."
+                let var_result_6 := keccak256(add(expr_mpos_2, /** @src 34:4819:4830  "entry.value" */ 32), /** @src 34:4183:4545  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ shl(/** @src 34:2738:3100  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ 5, /** @src 34:4183:4545  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Hash array elements directly without Solidity abi.encodePacked overhead...." */ mload(expr_mpos_2)))
+                /// @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                let usr$ptr := mload(/** @src 34:1345:1361  "config.addresses" */ 64)
+                /// @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                mstore(usr$ptr, /** @src 34:934:1167  "keccak256(\"Config(uint256 chain_id,uint256 timestamp,AddressEntry[] addresses,Bytes32Entry[] bytes32s,UintEntry[] uints)AddressEntry(string key,address value)Bytes32Entry(string key,bytes32 value)UintEntry(string key,uint256 value)\")" */ 0xbbdfc01ecb1eefc20b50fabf6a4d527755948223a6c45d9b4a23b0562fb8a198)
+                /// @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                mstore(add(usr$ptr, /** @src 34:4819:4830  "entry.value" */ 32), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ calldataload(var_config_46590_offset))
+                /// @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                mstore(add(usr$ptr, /** @src 34:1345:1361  "config.addresses" */ 64), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ calldataload(/** @src 34:1671:1687  "config.timestamp" */ add(var_config_46590_offset, /** @src 34:4819:4830  "entry.value" */ 32)))
+                /// @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...."
+                mstore(add(usr$ptr, /** @src 34:4841:5216  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ 0x60), /** @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ var_result_2)
+                mstore(add(usr$ptr, /** @src 34:1503:1515  "config.uints" */ 128), /** @src 34:1698:2373  "assembly (\"memory-safe\")  // *GAS SAVING*  -  Assembly avoids abi.encode overhead for the fixed-width EIP-712 struct...." */ var_result_4)
+                mstore(add(usr$ptr, 0xa0), var_result_6)
+                var_result := keccak256(usr$ptr, 0xc0)
+                calldatacopy(usr$ptr, calldatasize(), 0xc0)
+            }
+            /// @ast-id 42046 @src 26:4917:5093  "function _hashTypedDataV4(bytes32 structHash) internal view virtual returns (bytes32) {..."
+            function fun_hashTypedDataV4(var_structHash) -> var
+            {
+                /// @src 26:5053:5073  "_domainSeparatorV4()"
+                let _1 := fun_domainSeparatorV4()
+                /// @src 27:3445:3694  "assembly (\"memory-safe\") {..."
+                let usr$ptr := mload(0x40)
+                mstore(usr$ptr, "\x19\x01")
+                mstore(add(usr$ptr, 0x02), _1)
+                mstore(add(usr$ptr, 0x22), var_structHash)
+                /// @src 26:5013:5086  "return MessageHashUtils.toTypedDataHash(_domainSeparatorV4(), structHash)"
+                var := /** @src 27:3445:3694  "assembly (\"memory-safe\") {..." */ keccak256(usr$ptr, 0x42)
+            }
+            /// @ast-id 47035 @src 35:3300:4131  "function is_valid_contract_signature( address signer, bytes32 _hash, bytes memory signature ) internal view returns ( bool )..."
+            function fun_is_valid_contract_signature(var_signer, var_hash, var_signature_mpos) -> var
+            {
+                /// @src 35:3418:3422  "bool"
+                var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                let _1 := and(/** @src 35:3532:3547  "uint160(signer)" */ var_signer, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xffffffffffffffffffffffffffffffffffffffff)
+                /// @src 35:3527:3598  "if(  uint160(signer) < _MIN_ADDRESS_FOR_VALID_CONTRACT  )  return false"
+                if /** @src 35:3532:3581  "uint160(signer) < _MIN_ADDRESS_FOR_VALID_CONTRACT" */ lt(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1, /** @src 35:853:860  "0x10000" */ 0x010000)
+                /// @src 35:3527:3598  "if(  uint160(signer) < _MIN_ADDRESS_FOR_VALID_CONTRACT  )  return false"
+                {
+                    /// @src 35:3586:3598  "return false"
+                    var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                    /// @src 35:3586:3598  "return false"
+                    leave
+                }
+                /// @src 35:3707:3752  "if(  signer.code.length == 0  )  return false"
+                if /** @src 35:3712:3735  "signer.code.length == 0" */ iszero(/** @src 35:3712:3730  "signer.code.length" */ extcodesize(var_signer))
+                /// @src 35:3707:3752  "if(  signer.code.length == 0  )  return false"
+                {
+                    /// @src 35:3740:3752  "return false"
+                    var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                    /// @src 35:3740:3752  "return false"
+                    leave
+                }
+                /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                let _2 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                mstore(_2, /** @src 35:853:860  "0x10000" */ 0x1626ba7e00000000000000000000000000000000000000000000000000000000)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                mstore(/** @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )" */ add(_2, 4), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_hash)
+                /// @src 35:853:860  "0x10000"
+                mstore(add(/** @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )" */ _2, /** @src 35:853:860  "0x10000" */ 36), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 64)
+                /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                let trySuccessCondition := staticcall(gas(), _1, _2, sub(/** @src 35:853:860  "0x10000" */ abi_encode_string(var_signature_mpos, add(/** @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )" */ _2, /** @src 35:853:860  "0x10000" */ 68)), /** @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )" */ _2), _2, /** @src 35:853:860  "0x10000" */ 32)
+                /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                let expr := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                if trySuccessCondition
+                {
+                    let _3 := /** @src 35:853:860  "0x10000" */ 32
+                    /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                    if gt(/** @src 35:853:860  "0x10000" */ 32, /** @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )" */ returndatasize()) { _3 := returndatasize() }
+                    finalize_allocation(_2, _3)
+                    /// @src 35:853:860  "0x10000"
+                    if slt(sub(/** @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )" */ add(_2, _3), /** @src 35:853:860  "0x10000" */ _2), 32)
+                    {
+                        /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                        revert(expr, expr)
+                    }
+                    /// @src 35:853:860  "0x10000"
+                    let value := mload(_2)
+                    if iszero(eq(value, and(value, 0xffffffff00000000000000000000000000000000000000000000000000000000)))
+                    {
+                        revert(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ expr, expr)
+                    }
+                    /// @src 35:3826:3879  "IERC1271(signer).isValidSignature( _hash, signature )"
+                    expr := value
+                }
+                /// @src 35:3822:4125  "try IERC1271(signer).isValidSignature( _hash, signature ) returns ( bytes4 magic_value )..."
+                switch iszero(trySuccessCondition)
+                case 0 {
+                    /// @src 35:3933:3994  "return  ( magic_value == IERC1271.isValidSignature.selector )"
+                    var := /** @src 35:3943:3992  "magic_value == IERC1271.isValidSignature.selector" */ eq(/** @src 35:853:860  "0x10000" */ and(/** @src 35:3943:3992  "magic_value == IERC1271.isValidSignature.selector" */ expr, /** @src 35:853:860  "0x10000" */ 0xffffffff00000000000000000000000000000000000000000000000000000000), 0x1626ba7e00000000000000000000000000000000000000000000000000000000)
+                    /// @src 35:3933:3994  "return  ( magic_value == IERC1271.isValidSignature.selector )"
+                    leave
+                }
+                default /// @src 35:3822:4125  "try IERC1271(signer).isValidSignature( _hash, signature ) returns ( bytes4 magic_value )..."
+                {
+                    /// @src 35:4042:4054  "return false"
+                    var := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                    /// @src 35:4042:4054  "return false"
+                    leave
+                }
+            }
+            /// @ast-id 41062 @src 22:3358:3625  "function toStringWithFallback(ShortString value, string storage store) internal pure returns (string memory) {..."
+            function fun_toStringWithFallback(var_value) -> var__mpos
+            {
+                /// @src 22:3452:3465  "string memory"
+                var__mpos := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 96
+                /// @src 22:3477:3619  "if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {..."
+                switch /** @src 22:3481:3527  "ShortString.unwrap(value) != FALLBACK_SENTINEL" */ iszero(eq(var_value, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0xff))
+                case /** @src 22:3477:3619  "if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {..." */ 0 {
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let memPtr := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let ret := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let slotValue := sload(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ ret)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let length := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ ret
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    length := shr(1, slotValue)
+                    let outOfPlaceEncoding := and(slotValue, 1)
+                    if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }
+                    if eq(outOfPlaceEncoding, lt(length, 32))
+                    {
+                        mstore(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ ret, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                        mstore(4, 0x22)
+                        revert(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ ret, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0x24)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(memPtr, length)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    switch outOfPlaceEncoding
+                    case 0 {
+                        mstore(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 32), and(slotValue, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00))
+                        ret := add(add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ shl(5, iszero(iszero(length)))), 32)
+                    }
+                    case 1 {
+                        mstore(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0, 0)
+                        /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                        let dataPos := keccak256(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 32)
+                        let i := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0
+                        /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                        for { } lt(i, length) { i := add(i, 32) }
+                        {
+                            mstore(add(add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ i), 32), sload(dataPos))
+                            dataPos := add(dataPos, 1)
+                        }
+                        ret := add(add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ i), 32)
+                    }
+                    finalize_allocation(memPtr, sub(ret, memPtr))
+                    /// @src 22:3596:3608  "return store"
+                    var__mpos := memPtr
+                    leave
+                }
+                default /// @src 22:3477:3619  "if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {..."
+                {
+                    /// @src 22:2625:2665  "uint256(ShortString.unwrap(sstr)) & 0xFF"
+                    let expr := and(var_value, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0xff)
+                    /// @src 22:2675:2744  "if (result > 31) {..."
+                    if /** @src 22:2679:2690  "result > 31" */ gt(expr, /** @src 22:2688:2690  "31" */ 0x1f)
+                    /// @src 22:2675:2744  "if (result > 31) {..."
+                    {
+                        /// @src 22:2713:2733  "InvalidShortString()"
+                        mstore(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0, /** @src 22:2713:2733  "InvalidShortString()" */ 0xb3512b0c00000000000000000000000000000000000000000000000000000000)
+                        revert(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0, /** @src 22:2713:2733  "InvalidShortString()" */ 4)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let size := /** @src -1:-1:-1 */ 0
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let _1 := /** @src -1:-1:-1 */ size
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    _1 := /** @src -1:-1:-1 */ size
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    size := 64
+                    let memPtr_1 := mload(size)
+                    finalize_allocation(memPtr_1, size)
+                    mstore(memPtr_1, /** @src 22:2311:2313  "32" */ 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataStart := add(memPtr_1, /** @src 22:2311:2313  "32" */ 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    calldatacopy(dataStart, calldatasize(), add(size, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0))
+                    /// @src 22:2324:2430  "assembly (\"memory-safe\") {..."
+                    mstore(memPtr_1, expr)
+                    mstore(dataStart, var_value)
+                    /// @src 22:3543:3565  "return toString(value)"
+                    var__mpos := memPtr_1
+                    leave
+                }
+            }
+            /// @ast-id 41062 @src 22:3358:3625  "function toStringWithFallback(ShortString value, string storage store) internal pure returns (string memory) {..."
+            function fun_toStringWithFallback_7398(var_value) -> var_mpos
+            {
+                /// @src 22:3452:3465  "string memory"
+                var_mpos := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 96
+                /// @src 22:3477:3619  "if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {..."
+                switch /** @src 22:3481:3527  "ShortString.unwrap(value) != FALLBACK_SENTINEL" */ iszero(eq(var_value, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0xff))
+                case /** @src 22:3477:3619  "if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {..." */ 0 {
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let memPtr := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let ret := /** @src -1:-1:-1 */ 0
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let slotValue := sload(/** @src 26:6584:6600  "_versionFallback" */ 0x01)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    let length := /** @src -1:-1:-1 */ ret
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    length := shr(/** @src 26:6584:6600  "_versionFallback" */ 0x01, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ slotValue)
+                    let outOfPlaceEncoding := and(slotValue, /** @src 26:6584:6600  "_versionFallback" */ 0x01)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }
+                    if eq(outOfPlaceEncoding, lt(length, 32))
+                    {
+                        mstore(/** @src -1:-1:-1 */ ret, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                        mstore(4, 0x22)
+                        revert(/** @src -1:-1:-1 */ ret, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0x24)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(memPtr, length)
+                    /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                    switch outOfPlaceEncoding
+                    case 0 {
+                        mstore(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 32), and(slotValue, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00))
+                        ret := add(add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ shl(5, iszero(iszero(length)))), 32)
+                    }
+                    case 1 {
+                        mstore(/** @src -1:-1:-1 */ 0, /** @src 26:6584:6600  "_versionFallback" */ 0x01)
+                        /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                        let dataPos := keccak256(/** @src -1:-1:-1 */ 0, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 32)
+                        let i := /** @src -1:-1:-1 */ 0
+                        /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                        for { } lt(i, length) { i := add(i, 32) }
+                        {
+                            mstore(add(add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ i), 32), sload(dataPos))
+                            dataPos := add(dataPos, /** @src 26:6584:6600  "_versionFallback" */ 0x01)
+                        }
+                        /// @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF"
+                        ret := add(add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ memPtr, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ i), 32)
+                    }
+                    finalize_allocation(memPtr, sub(ret, memPtr))
+                    /// @src 22:3596:3608  "return store"
+                    var_mpos := memPtr
+                    leave
+                }
+                default /// @src 22:3477:3619  "if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {..."
+                {
+                    /// @src 22:2625:2665  "uint256(ShortString.unwrap(sstr)) & 0xFF"
+                    let expr := and(var_value, /** @src 22:1390:1456  "0x00000000000000000000000000000000000000000000000000000000000000FF" */ 0xff)
+                    /// @src 22:2675:2744  "if (result > 31) {..."
+                    if /** @src 22:2679:2690  "result > 31" */ gt(expr, /** @src 22:2688:2690  "31" */ 0x1f)
+                    /// @src 22:2675:2744  "if (result > 31) {..."
+                    {
+                        /// @src 22:2713:2733  "InvalidShortString()"
+                        mstore(/** @src -1:-1:-1 */ 0, /** @src 22:2713:2733  "InvalidShortString()" */ 0xb3512b0c00000000000000000000000000000000000000000000000000000000)
+                        revert(/** @src -1:-1:-1 */ 0, /** @src 22:2713:2733  "InvalidShortString()" */ 4)
+                    }
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let size := /** @src -1:-1:-1 */ 0
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let _1 := /** @src -1:-1:-1 */ size
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    _1 := /** @src -1:-1:-1 */ size
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    size := 64
+                    let memPtr_1 := mload(size)
+                    finalize_allocation(memPtr_1, size)
+                    mstore(memPtr_1, /** @src 22:2311:2313  "32" */ 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    let dataStart := add(memPtr_1, /** @src 22:2311:2313  "32" */ 0x20)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    calldatacopy(dataStart, calldatasize(), add(size, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0))
+                    /// @src 22:2324:2430  "assembly (\"memory-safe\") {..."
+                    mstore(memPtr_1, expr)
+                    mstore(dataStart, var_value)
+                    /// @src 22:3543:3565  "return toString(value)"
+                    var_mpos := memPtr_1
+                    leave
+                }
+            }
+            /// @ast-id 46364 @src 32:5984:6357  "function _validate_key_write( address signer, bytes32 key, uint256 signed_timestamp ) private view..."
+            function fun_validate_key_write(var_signer, var_key, var_signed_timestamp)
+            {
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let _1 := and(var_signer, 0xffffffffffffffffffffffffffffffffffffffff)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                mstore(0x20, /** @src 32:6134:6147  "_key_metadata" */ 0x02)
+                /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                let dataSlot := keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40)
+                mstore(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ var_key)
+                mstore(0x20, dataSlot)
+                let _2 := sload(/** @src 32:6199:6221  "key_metadata.timestamp" */ add(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ keccak256(/** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0x40), /** @src 32:6199:6221  "key_metadata.timestamp" */ 1))
+                /// @src 32:6174:6350  "if(  signed_timestamp <= key_metadata.timestamp  )  revert StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })"
+                if /** @src 32:6179:6221  "signed_timestamp <= key_metadata.timestamp" */ iszero(gt(var_signed_timestamp, _2))
+                /// @src 32:6174:6350  "if(  signed_timestamp <= key_metadata.timestamp  )  revert StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })"
+                {
+                    /// @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })"
+                    let _3 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(0x40)
+                    /// @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })"
+                    mstore(_3, 0xee5646c000000000000000000000000000000000000000000000000000000000)
+                    /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+                    mstore(/** @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })" */ add(_3, 4), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ _1)
+                    mstore(add(/** @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 36), var_key)
+                    mstore(add(/** @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 68), var_signed_timestamp)
+                    mstore(add(/** @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })" */ _3, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 100), _2)
+                    /// @src 32:6233:6350  "StaleConfig({ signer: signer, key: key, signed_timestamp: signed_timestamp, prev_timestamp: key_metadata.timestamp })"
+                    revert(_3, 132)
+                }
+            }
+            /// @src 31:2979:14630  "contract ChainConfig is Core {..."
+            function allocate_and_zero_memory_array_array_bytes32_dyn(length) -> memPtr
+            {
+                let _1 := array_allocation_size_array_uint256_dyn(length)
+                let memPtr_1 := mload(64)
+                finalize_allocation(memPtr_1, _1)
+                mstore(memPtr_1, length)
+                memPtr := memPtr_1
+                calldatacopy(add(memPtr_1, 32), calldatasize(), add(array_allocation_size_array_uint256_dyn(length), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0))
+            }
+            function memory_array_index_access_bytes32_dyn(baseRef, index) -> addr
+            {
+                if iszero(lt(index, mload(baseRef)))
+                {
+                    mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                    mstore(4, 0x32)
+                    revert(0, 0x24)
+                }
+                addr := add(add(baseRef, shl(5, index)), 32)
+            }
+            /// @ast-id 41612 @src 25:2129:2907  "function tryRecover(..."
+            function fun_tryRecover(var_hash, var_signature_41564_mpos) -> var_recovered, var_err, var_errArg
+            {
+                /// @src 25:2299:2315  "signature.length"
+                let expr := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 25:2299:2315  "signature.length" */ var_signature_41564_mpos)
+                /// @src 25:2295:2901  "if (signature.length == 65) {..."
+                switch /** @src 25:2299:2321  "signature.length == 65" */ eq(expr, /** @src 25:2319:2321  "65" */ 0x41)
+                case /** @src 25:2295:2901  "if (signature.length == 65) {..." */ 0 {
+                    /// @src 25:2807:2890  "return (address(0), RecoverError.InvalidSignatureLength, bytes32(signature.length))"
+                    var_recovered := /** @src 25:2823:2824  "0" */ 0x00
+                    /// @src 25:2807:2890  "return (address(0), RecoverError.InvalidSignatureLength, bytes32(signature.length))"
+                    var_err := /** @src 25:2827:2862  "RecoverError.InvalidSignatureLength" */ 2
+                    /// @src 25:2807:2890  "return (address(0), RecoverError.InvalidSignatureLength, bytes32(signature.length))"
+                    var_errArg := expr
+                    leave
+                }
+                default /// @src 25:2295:2901  "if (signature.length == 65) {..."
+                {
+                    /// @src 25:2535:2731  "assembly (\"memory-safe\") {..."
+                    let var_r := mload(add(var_signature_41564_mpos, 0x20))
+                    /// @src 25:2751:2776  "tryRecover(hash, v, r, s)"
+                    let expr_component, expr_component_1, expr_component_2 := fun_tryRecover_41800(var_hash, /** @src 25:2535:2731  "assembly (\"memory-safe\") {..." */ byte(/** @src -1:-1:-1 */ 0, /** @src 25:2535:2731  "assembly (\"memory-safe\") {..." */ mload(add(var_signature_41564_mpos, 0x60))), /** @src 25:2751:2776  "tryRecover(hash, v, r, s)" */ var_r, /** @src 25:2535:2731  "assembly (\"memory-safe\") {..." */ mload(add(var_signature_41564_mpos, 0x40)))
+                    /// @src 25:2744:2776  "return tryRecover(hash, v, r, s)"
+                    var_recovered := expr_component
+                    var_err := expr_component_1
+                    var_errArg := expr_component_2
+                    leave
+                }
+            }
+            /// @ast-id 41800 @src 25:5203:6754  "function tryRecover(..."
+            function fun_tryRecover_41800(var_hash, var_v, var_r, var_s) -> var_recovered, var_err, var_errArg
+            {
+                /// @src 25:6266:6430  "if (uint256(s) > 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0) {..."
+                if /** @src 25:6270:6349  "uint256(s) > 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0" */ gt(var_s, /** @src 25:6283:6349  "0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0" */ 0x7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0)
+                /// @src 25:6266:6430  "if (uint256(s) > 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0) {..."
+                {
+                    /// @src 25:6365:6419  "return (address(0), RecoverError.InvalidSignatureS, s)"
+                    var_recovered := /** @src 25:6381:6382  "0" */ 0x00
+                    /// @src 25:6365:6419  "return (address(0), RecoverError.InvalidSignatureS, s)"
+                    var_err := /** @src 25:6385:6415  "RecoverError.InvalidSignatureS" */ 3
+                    /// @src 25:6365:6419  "return (address(0), RecoverError.InvalidSignatureS, s)"
+                    var_errArg := var_s
+                    leave
+                }
+                /// @src 25:6541:6565  "ecrecover(hash, v, r, s)"
+                let _1 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                mstore(_1, var_hash)
+                mstore(add(_1, 32), and(var_v, 0xff))
+                mstore(add(_1, 64), var_r)
+                mstore(add(_1, 96), var_s)
+                /// @src 25:6541:6565  "ecrecover(hash, v, r, s)"
+                mstore(/** @src -1:-1:-1 */ 0, 0)
+                /// @src 25:6541:6565  "ecrecover(hash, v, r, s)"
+                if iszero(staticcall(gas(), 1, _1, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 128, /** @src -1:-1:-1 */ 0, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 32))
+                /// @src 25:6541:6565  "ecrecover(hash, v, r, s)"
+                {
+                    /// @src 35:853:860  "0x10000"
+                    let pos := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 35:853:860  "0x10000"
+                    returndatacopy(pos, /** @src -1:-1:-1 */ 0, /** @src 35:853:860  "0x10000" */ returndatasize())
+                    revert(pos, returndatasize())
+                }
+                /// @src 25:6541:6565  "ecrecover(hash, v, r, s)"
+                let _2 := mload(/** @src -1:-1:-1 */ 0)
+                /// @src 25:6575:6688  "if (signer == address(0)) {..."
+                if /** @src 25:6579:6599  "signer == address(0)" */ iszero(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ and(/** @src 25:6579:6599  "signer == address(0)" */ _2, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ 0xffffffffffffffffffffffffffffffffffffffff))
+                /// @src 25:6575:6688  "if (signer == address(0)) {..."
+                {
+                    /// @src 25:6615:6677  "return (address(0), RecoverError.InvalidSignature, bytes32(0))"
+                    var_recovered := /** @src -1:-1:-1 */ 0
+                    /// @src 25:6615:6677  "return (address(0), RecoverError.InvalidSignature, bytes32(0))"
+                    var_err := /** @src 25:6541:6565  "ecrecover(hash, v, r, s)" */ 1
+                    /// @src 25:6615:6677  "return (address(0), RecoverError.InvalidSignature, bytes32(0))"
+                    var_errArg := /** @src -1:-1:-1 */ 0
+                    /// @src 25:6615:6677  "return (address(0), RecoverError.InvalidSignature, bytes32(0))"
+                    leave
+                }
+                /// @src 25:6698:6747  "return (signer, RecoverError.NoError, bytes32(0))"
+                var_recovered := _2
+                var_err := /** @src -1:-1:-1 */ 0
+                /// @src 25:6698:6747  "return (signer, RecoverError.NoError, bytes32(0))"
+                var_errArg := /** @src -1:-1:-1 */ 0
+            }
+            /// @ast-id 46888 @src 34:6561:6969  "function _validate_and_hash_key( string calldata key )..."
+            function fun_validate_and_hash_key(var_key_offset, var_key_46850_length) -> var_key_hash
+            {
+                /// @src 34:6725:6774  "if(  key_bytes.length == 0  )  revert EmptyKey( )"
+                if /** @src 34:6730:6751  "key_bytes.length == 0" */ iszero(var_key_46850_length)
+                /// @src 34:6725:6774  "if(  key_bytes.length == 0  )  revert EmptyKey( )"
+                {
+                    /// @src 34:6763:6774  "EmptyKey( )"
+                    mstore(/** @src -1:-1:-1 */ 0, /** @src 34:6763:6774  "EmptyKey( )" */ 0x3cd69fac00000000000000000000000000000000000000000000000000000000)
+                    revert(/** @src -1:-1:-1 */ 0, /** @src 34:6763:6774  "EmptyKey( )" */ 4)
+                }
+                /// @src 34:6784:6872  "if(  key_bytes.length > 32  )  revert KeyTooLong({ key: key, length: key_bytes.length })"
+                if /** @src 34:6789:6810  "key_bytes.length > 32" */ gt(var_key_46850_length, /** @src 34:6808:6810  "32" */ 0x20)
+                /// @src 34:6784:6872  "if(  key_bytes.length > 32  )  revert KeyTooLong({ key: key, length: key_bytes.length })"
+                {
+                    /// @src 34:6822:6872  "KeyTooLong({ key: key, length: key_bytes.length })"
+                    let _1 := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(64)
+                    /// @src 34:6822:6872  "KeyTooLong({ key: key, length: key_bytes.length })"
+                    mstore(_1, 0x603b97e500000000000000000000000000000000000000000000000000000000)
+                    revert(_1, sub(abi_encode_string_calldata_uint256(add(_1, 4), var_key_offset, var_key_46850_length, var_key_46850_length), _1))
+                }
+                /// @src 34:6896:6918  "keccak256( key_bytes )"
+                let _mpos := /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ abi_decode_available_length_bytes(/** @src 34:6896:6918  "keccak256( key_bytes )" */ var_key_offset, var_key_46850_length, /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ calldatasize())
+                /// @src 34:6883:6918  "key_hash  =  keccak256( key_bytes )"
+                var_key_hash := /** @src 34:6896:6918  "keccak256( key_bytes )" */ keccak256(/** @src 31:2979:14630  "contract ChainConfig is Core {..." */ add(/** @src 34:6896:6918  "keccak256( key_bytes )" */ _mpos, /** @src 34:6808:6810  "32" */ 0x20), /** @src 31:2979:14630  "contract ChainConfig is Core {..." */ mload(/** @src 34:6896:6918  "keccak256( key_bytes )" */ _mpos))
+            }
+        }
+        data ".metadata" hex"a26469706673582212205fc16ff9873b9c2e94bc0f5e1feef7eab5c6b03f2168127e673d08025f2c0b1764736f6c63430008230033"
+    }
+}

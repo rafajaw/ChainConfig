@@ -273,16 +273,14 @@ ChainConfig is designed for byte-identical reproducible builds. The canonical by
 
 - **Solidity:** `=0.8.35` (pinned in source pragmas)
 - **Compiler settings:** see `foundry.toml` (`via_ir = true`, `optimizer_runs = 1_000_000_000`, `evm_version = "london"`)
-- **Commit:** `<TO_BE_FROZEN_AT_DEPLOY>`
 
-To reproduce:
+To reproduce, clone the repo and run `forge build`. The resulting init code hash must match:
 
-```bash
-git checkout <TO_BE_FROZEN_AT_DEPLOY>
-forge build
+```
+0x645aea6490075d66530b3f76be94e7970ab0ebfa0328300879e73cf8d79bedbe
 ```
 
-The resulting init code hash must match `<TO_BE_FROZEN_AT_DEPLOY>`. See `deploy/INSTRUCTIONS.md` for the canonical CREATE2 deployment.
+See `deploy/INSTRUCTIONS.md` for the canonical CREATE2 deployment at address `0x5Afec0de00EB1c5323C7faA110f67499F744467b`.
 
 ---
 

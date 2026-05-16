@@ -5,7 +5,7 @@ ChainConfig Deployment
 
 Contract address (same on every chain):
 
-    <TO_BE_MINED>
+    0x5Afec0de00EB1c5323C7faA110f67499F744467b
 
 
 Deploy to a new chain
@@ -38,8 +38,8 @@ CREATE2 parameters
 ------------------
 
     Factory:        0x4e59b44847b379578588920cA78FbF26c0B4956C
-    Salt:           <TO_BE_MINED>
-    Init Code Hash: <TO_BE_MINED>
+    Salt:           0xcabdd74eca000000cabd07000000000000000000000000000000000000000000
+    Init Code Hash: 0x645aea6490075d66530b3f76be94e7970ab0ebfa0328300879e73cf8d79bedbe
 
 
 Constructor arguments
