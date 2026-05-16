@@ -13,11 +13,12 @@ pragma solidity ^0.8.30;
  *      - invariant_<property>
  *
  *      CURRENT STATS:
- *      - 118 manifest tests.
- *      - 118 implemented tests.
+ *      - 131 manifest tests.
+ *      - 131 implemented tests.
  *      - 57 ChainConfig tests.
  *      - 33 HashLib tests.
  *      - 16 SignatureValidator tests.
+ *      - 13 integration tests (IChainConfig drop-in interface).
  *      - 9 fuzz tests.
  *      - 3 stateful invariants (driven by InvariantHandler).
  */
@@ -212,4 +213,31 @@ interface IInvariantTests {
     function invariant_ghost_state_mirrors_onchain_state() external;
     function invariant_string_and_bytes32_reads_agree() external;
     function invariant_only_ghost_type_succeeds_for_reads() external;
+}
+
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// INTEGRATIONS - Drop-in consumer interface (src/integrations/IChainConfig.sol)
+// Implemented in: test/integrations/IChainConfig.t.sol
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+interface IIntegrationTests {
+    // ─── Typed-constant routing (interface signature integrity) ──────────────────
+    function test_typed_constant_points_to_canonical_address() external;
+    function test_read_address_via_typed_constant_returns_written_value() external;
+    function test_read_bytes32_via_typed_constant_returns_written_value() external;
+    function test_read_uint_via_typed_constant_returns_written_value() external;
+    function test_string_key_overload_works_via_typed_constant() external;
+    function test_bytes32_key_overload_works_via_typed_constant() external;
+
+    // ─── DAO-as-signer pattern (contract publishing under its own namespace) ─────
+    function test_dao_publishes_address_under_its_own_namespace() external;
+    function test_dao_publishes_uint_under_its_own_namespace() external;
+    function test_two_daos_have_isolated_namespaces() external;
+    function test_dao_updates_value_with_newer_timestamp() external;
+    function test_dao_changes_type_with_newer_timestamp() external;
+
+    // ─── Downstream consumer pattern (constructor-time read + immutable cache) ───
+    function test_downstream_consumer_reads_dao_address_in_constructor() external;
+    function test_downstream_consumer_reads_dao_uint_in_constructor() external;
 }

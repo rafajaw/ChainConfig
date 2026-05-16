@@ -50,13 +50,14 @@ Result: same source, same init code, same CREATE2 salt, same downstream address,
 4. Downstream constructors read typed values from the canonical registry.
 
 ```solidity
-address usdc  =  ChainConfig(CHAIN_CONFIG).read_address(
-    CONFIG_SIGNER,
-    bytes32("USDC_ADDRESS")
-);
+import { ChainConfig } from "<chainconfig>/src/integrations/IChainConfig.sol";
+
+contract MyContract {
+    address public immutable USDC  =  ChainConfig.read_address( TRUSTED_SIGNER, bytes32("USDC_ADDRESS") );
+}
 ```
 
-The constructor call reads chain-local state. The constructor bytecode remains the same.
+The constructor reads chain-local state via the drop-in `ChainConfig` constant — same constructor bytecode on every chain.
 
 ---
 
@@ -263,7 +264,7 @@ forge build
 forge test
 ```
 
-The test suite includes unit, fuzz, invariant, and reference-hash cross-checks across `ChainConfig`, `HashLib`, and `SignatureValidator`.
+The test suite includes unit, fuzz, invariant, integration, and reference-hash cross-checks across `ChainConfig`, `HashLib`, `SignatureValidator`, and the `src/integrations/IChainConfig.sol` drop-in consumer interface.
 
 ---
 
